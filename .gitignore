@@ -1,0 +1,10 @@
+bin/
+
+*.txt
+
+*.opensdf
+*.psess
+*.sdf
+*.suo
+
+*.bmp
