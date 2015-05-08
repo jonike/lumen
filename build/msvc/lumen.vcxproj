@@ -19,7 +19,11 @@
     </ProjectConfiguration>
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="..\..\src\image\image.cpp" />
     <ClCompile Include="..\..\src\main.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="..\..\src\image\image.h" />
   </ItemGroup>
   <PropertyGroup Label="Globals">
     <ProjectGuid>{AD419112-147E-46B1-B34C-2A20737C63C9}</ProjectGuid>
@@ -74,11 +78,11 @@
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'" />
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
     <IntDir>$(TEMP)\$(ProjectName)\$(Platform)\$(Configuration)\</IntDir>
-    <IncludePath>..\..\lib\SDL2-2.0.3\include;$(IncludePath)</IncludePath>
+    <IncludePath>..\..\src\image;..\..\lib\SDL2-2.0.3\include;$(IncludePath)</IncludePath>
     <LibraryPath>..\..\lib\SDL2-2.0.3\lib\x86;$(LibraryPath)</LibraryPath>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
-    <IncludePath>..\..\lib\SDL2-2.0.3\include;$(IncludePath)</IncludePath>
+    <IncludePath>..\..\src\image;..\..\lib\SDL2-2.0.3\include;$(IncludePath)</IncludePath>
     <OutDir>..\..\bin\$(Platform)\$(Configuration)\</OutDir>
     <IntDir>$(TEMP)\$(ProjectName)\$(Platform)\$(Configuration)\</IntDir>
     <LibraryPath>..\..\lib\SDL2-2.0.3\lib\x64;$(LibraryPath)</LibraryPath>
@@ -89,11 +93,11 @@
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'" />
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
     <IntDir>$(TEMP)\$(ProjectName)\$(Platform)\$(Configuration)\</IntDir>
-    <IncludePath>..\..\lib\SDL2-2.0.3\include;$(IncludePath)</IncludePath>
+    <IncludePath>..\..\src\image;..\..\lib\SDL2-2.0.3\include;$(IncludePath)</IncludePath>
     <LibraryPath>..\..\lib\SDL2-2.0.3\lib\x86;$(LibraryPath)</LibraryPath>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
-    <IncludePath>..\..\lib\SDL2-2.0.3\include;$(IncludePath)</IncludePath>
+    <IncludePath>..\..\src\image;..\..\lib\SDL2-2.0.3\include;$(IncludePath)</IncludePath>
     <OutDir>..\..\bin\$(Platform)\$(Configuration)\</OutDir>
     <IntDir>$(TEMP)\$(ProjectName)\$(Platform)\$(Configuration)\</IntDir>
     <LibraryPath>..\..\lib\SDL2-2.0.3\lib\x64;$(LibraryPath)</LibraryPath>
@@ -114,7 +118,8 @@
     </Link>
     <PostBuildEvent />
     <PostBuildEvent>
-      <Command>copy ..\..\lib\SDL2-2.0.3\lib\x86\SDL2.dll $(OutDir)</Command>
+      <Command>
+      </Command>
     </PostBuildEvent>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
@@ -131,7 +136,8 @@
       <IgnoreSpecificDefaultLibraries>msvcrt.lib</IgnoreSpecificDefaultLibraries>
     </Link>
     <PostBuildEvent>
-      <Command>copy ..\..\lib\SDL2-2.0.3\lib\x64\SDL2.dll $(OutDir)</Command>
+      <Command>
+      </Command>
     </PostBuildEvent>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
@@ -160,7 +166,8 @@
     </Link>
     <PostBuildEvent />
     <PostBuildEvent>
-      <Command>copy ..\..\lib\SDL2-2.0.3\lib\x86\SDL2.dll $(OutDir)</Command>
+      <Command>
+      </Command>
     </PostBuildEvent>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
@@ -187,7 +194,8 @@
       <AdditionalDependencies>SDL2.lib;SDL2main.lib;%(AdditionalDependencies)</AdditionalDependencies>
     </Link>
     <PostBuildEvent>
-      <Command>copy ..\..\lib\SDL2-2.0.3\lib\x64\SDL2.dll $(OutDir)</Command>
+      <Command>
+      </Command>
     </PostBuildEvent>
   </ItemDefinitionGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
