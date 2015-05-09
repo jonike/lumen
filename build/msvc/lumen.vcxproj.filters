@@ -7,6 +7,9 @@
     <Filter Include="src\image">
       <UniqueIdentifier>{5e044b96-e8a8-4097-80af-c97953db8f93}</UniqueIdentifier>
     </Filter>
+    <Filter Include="src\sampler">
+      <UniqueIdentifier>{e58cb4ca-a2eb-4d2a-a35a-f9ef614344e5}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="..\..\src\main.cpp">
@@ -15,10 +18,22 @@
     <ClCompile Include="..\..\src\image\image.cpp">
       <Filter>src\image</Filter>
     </ClCompile>
+    <ClCompile Include="..\..\src\sampler\jittered_sampler.cpp">
+      <Filter>src\sampler</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\src\sampler\sampler.cpp">
+      <Filter>src\sampler</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="..\..\src\image\image.h">
       <Filter>src\image</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\src\sampler\jittered_sampler.h">
+      <Filter>src\sampler</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\src\sampler\sampler.h">
+      <Filter>src\sampler</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>
