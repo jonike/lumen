@@ -10,6 +10,9 @@
     <Filter Include="src\sampler">
       <UniqueIdentifier>{e58cb4ca-a2eb-4d2a-a35a-f9ef614344e5}</UniqueIdentifier>
     </Filter>
+    <Filter Include="src\camera">
+      <UniqueIdentifier>{d4cd3cf6-0578-43e6-92f5-17cf3b7f1a4a}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="..\..\src\main.cpp">
@@ -24,6 +27,9 @@
     <ClCompile Include="..\..\src\sampler\sampler.cpp">
       <Filter>src\sampler</Filter>
     </ClCompile>
+    <ClCompile Include="..\..\src\camera\thin_lens.cpp">
+      <Filter>src\camera</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="..\..\src\image\image.h">
@@ -34,6 +40,12 @@
     </ClInclude>
     <ClInclude Include="..\..\src\sampler\sampler.h">
       <Filter>src\sampler</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\src\camera\camera.h">
+      <Filter>src\camera</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\src\camera\thin_lens.h">
+      <Filter>src\camera</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>
