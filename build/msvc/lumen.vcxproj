@@ -19,6 +19,8 @@
     </ProjectConfiguration>
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="..\..\src\bxdf\bsdf.cpp" />
+    <ClCompile Include="..\..\src\bxdf\bxdf.cpp" />
     <ClCompile Include="..\..\src\camera\thin_lens.cpp" />
     <ClCompile Include="..\..\src\geometry\bound.cpp" />
     <ClCompile Include="..\..\src\image\image.cpp" />
@@ -27,6 +29,8 @@
     <ClCompile Include="..\..\src\sampler\sampler.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="..\..\src\bxdf\bsdf.h" />
+    <ClInclude Include="..\..\src\bxdf\bxdf.h" />
     <ClInclude Include="..\..\src\camera\camera.h" />
     <ClInclude Include="..\..\src\camera\thin_lens.h" />
     <ClInclude Include="..\..\src\geometry\bound.h" />
@@ -87,11 +91,11 @@
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'" />
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
     <IntDir>$(TEMP)\$(ProjectName)\$(Platform)\$(Configuration)\</IntDir>
-    <IncludePath>..\..\src\camera;..\..\src\geometry;..\..\src\image;..\..\src\sampler;..\..\lib\nex\src;..\..\lib\nex\src\concurrency;..\..\lib\nex\src\math;..\..\lib\nex\src\resource;..\..\lib\SDL2-2.0.3\include;$(IncludePath)</IncludePath>
+    <IncludePath>..\..\src\bxdf;..\..\src\camera;..\..\src\geometry;..\..\src\image;..\..\src\sampler;..\..\lib\nex\src;..\..\lib\nex\src\concurrency;..\..\lib\nex\src\math;..\..\lib\nex\src\resource;..\..\lib\SDL2-2.0.3\include;$(IncludePath)</IncludePath>
     <LibraryPath>..\..\lib\nex\lib\windows\Win32;..\..\lib\SDL2-2.0.3\lib\x86;$(LibraryPath)</LibraryPath>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
-    <IncludePath>..\..\src\camera;..\..\src\geometry;..\..\src\image;..\..\src\sampler;..\..\lib\nex\src;..\..\lib\nex\src\concurrency;..\..\lib\nex\src\math;..\..\lib\nex\src\resource;..\..\lib\SDL2-2.0.3\include;$(IncludePath)</IncludePath>
+    <IncludePath>..\..\src\bxdf;..\..\src\camera;..\..\src\geometry;..\..\src\image;..\..\src\sampler;..\..\lib\nex\src;..\..\lib\nex\src\concurrency;..\..\lib\nex\src\math;..\..\lib\nex\src\resource;..\..\lib\SDL2-2.0.3\include;$(IncludePath)</IncludePath>
     <OutDir>..\..\bin\$(Platform)\$(Configuration)\</OutDir>
     <IntDir>$(TEMP)\$(ProjectName)\$(Platform)\$(Configuration)\</IntDir>
     <LibraryPath>..\..\lib\nex\lib\windows\x64;..\..\lib\SDL2-2.0.3\lib\x64;$(LibraryPath)</LibraryPath>
@@ -102,11 +106,11 @@
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'" />
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
     <IntDir>$(TEMP)\$(ProjectName)\$(Platform)\$(Configuration)\</IntDir>
-    <IncludePath>..\..\src\camera;..\..\src\geometry;..\..\src\image;..\..\src\sampler;..\..\lib\nex\src;..\..\lib\nex\src\concurrency;..\..\lib\nex\src\math;..\..\lib\nex\src\resource;..\..\lib\SDL2-2.0.3\include;$(IncludePath)</IncludePath>
+    <IncludePath>..\..\src\bxdf;..\..\src\camera;..\..\src\geometry;..\..\src\image;..\..\src\sampler;..\..\lib\nex\src;..\..\lib\nex\src\concurrency;..\..\lib\nex\src\math;..\..\lib\nex\src\resource;..\..\lib\SDL2-2.0.3\include;$(IncludePath)</IncludePath>
     <LibraryPath>..\..\lib\nex\lib\windows\Win32;..\..\lib\SDL2-2.0.3\lib\x86;$(LibraryPath)</LibraryPath>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
-    <IncludePath>..\..\src\camera;..\..\src\geometry;..\..\src\image;..\..\src\sampler;..\..\lib\nex\src;..\..\lib\nex\src\concurrency;..\..\lib\nex\src\math;..\..\lib\nex\src\resource;..\..\lib\SDL2-2.0.3\include;$(IncludePath)</IncludePath>
+    <IncludePath>..\..\src\bxdf;..\..\src\camera;..\..\src\geometry;..\..\src\image;..\..\src\sampler;..\..\lib\nex\src;..\..\lib\nex\src\concurrency;..\..\lib\nex\src\math;..\..\lib\nex\src\resource;..\..\lib\SDL2-2.0.3\include;$(IncludePath)</IncludePath>
     <OutDir>..\..\bin\$(Platform)\$(Configuration)\</OutDir>
     <IntDir>$(TEMP)\$(ProjectName)\$(Platform)\$(Configuration)\</IntDir>
     <LibraryPath>..\..\lib\nex\lib\windows\x64;..\..\lib\SDL2-2.0.3\lib\x64;$(LibraryPath)</LibraryPath>

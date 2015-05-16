@@ -16,6 +16,9 @@
     <Filter Include="src\geometry">
       <UniqueIdentifier>{5233b4b8-87b3-491e-ac4f-cb393acd868d}</UniqueIdentifier>
     </Filter>
+    <Filter Include="src\bxdf">
+      <UniqueIdentifier>{b31f24b8-7863-4de9-83ee-cba5db158d51}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="..\..\src\main.cpp">
@@ -36,6 +39,12 @@
     <ClCompile Include="..\..\src\geometry\bound.cpp">
       <Filter>src\geometry</Filter>
     </ClCompile>
+    <ClCompile Include="..\..\src\bxdf\bsdf.cpp">
+      <Filter>src\bxdf</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\src\bxdf\bxdf.cpp">
+      <Filter>src\bxdf</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="..\..\src\image\image.h">
@@ -55,6 +64,12 @@
     </ClInclude>
     <ClInclude Include="..\..\src\geometry\bound.h">
       <Filter>src\geometry</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\src\bxdf\bsdf.h">
+      <Filter>src\bxdf</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\src\bxdf\bxdf.h">
+      <Filter>src\bxdf</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>
