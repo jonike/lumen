@@ -45,6 +45,9 @@
     <ClCompile Include="..\..\src\bxdf\bxdf.cpp">
       <Filter>src\bxdf</Filter>
     </ClCompile>
+    <ClCompile Include="..\..\src\geometry\geometry.cpp">
+      <Filter>src\geometry</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="..\..\src\image\image.h">
@@ -70,6 +73,9 @@
     </ClInclude>
     <ClInclude Include="..\..\src\bxdf\bxdf.h">
       <Filter>src\bxdf</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\src\geometry\geometry.h">
+      <Filter>src\geometry</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>
