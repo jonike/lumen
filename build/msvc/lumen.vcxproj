@@ -25,6 +25,7 @@
     <ClCompile Include="..\..\src\geometry\bound.cpp" />
     <ClCompile Include="..\..\src\geometry\geometry.cpp" />
     <ClCompile Include="..\..\src\geometry\plane.cpp" />
+    <ClCompile Include="..\..\src\geometry\rectangle.cpp" />
     <ClCompile Include="..\..\src\image\image.cpp" />
     <ClCompile Include="..\..\src\main.cpp" />
     <ClCompile Include="..\..\src\sampler\jittered_sampler.cpp" />
@@ -38,6 +39,7 @@
     <ClInclude Include="..\..\src\geometry\bound.h" />
     <ClInclude Include="..\..\src\geometry\geometry.h" />
     <ClInclude Include="..\..\src\geometry\plane.h" />
+    <ClInclude Include="..\..\src\geometry\rectangle.h" />
     <ClInclude Include="..\..\src\image\image.h" />
     <ClInclude Include="..\..\src\sampler\jittered_sampler.h" />
     <ClInclude Include="..\..\src\sampler\sampler.h" />
