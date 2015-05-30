@@ -54,6 +54,9 @@
     <ClCompile Include="..\..\src\geometry\rectangle.cpp">
       <Filter>src\geometry</Filter>
     </ClCompile>
+    <ClCompile Include="..\..\src\geometry\sphere.cpp">
+      <Filter>src\geometry</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="..\..\src\image\image.h">
@@ -87,6 +90,9 @@
       <Filter>src\geometry</Filter>
     </ClInclude>
     <ClInclude Include="..\..\src\geometry\rectangle.h">
+      <Filter>src\geometry</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\src\geometry\sphere.h">
       <Filter>src\geometry</Filter>
     </ClInclude>
   </ItemGroup>
