@@ -19,6 +19,9 @@
     <Filter Include="src\bxdf">
       <UniqueIdentifier>{b31f24b8-7863-4de9-83ee-cba5db158d51}</UniqueIdentifier>
     </Filter>
+    <Filter Include="src\texture">
+      <UniqueIdentifier>{1fc70b74-7544-4523-9bf2-200ed27b4508}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="..\..\src\main.cpp">
@@ -57,6 +60,9 @@
     <ClCompile Include="..\..\src\geometry\sphere.cpp">
       <Filter>src\geometry</Filter>
     </ClCompile>
+    <ClCompile Include="..\..\src\texture\texture.cpp">
+      <Filter>src\texture</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="..\..\src\image\image.h">
@@ -94,6 +100,9 @@
     </ClInclude>
     <ClInclude Include="..\..\src\geometry\sphere.h">
       <Filter>src\geometry</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\src\texture\texture.h">
+      <Filter>src\texture</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>
