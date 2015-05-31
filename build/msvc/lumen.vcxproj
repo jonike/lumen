@@ -32,6 +32,7 @@
     <ClCompile Include="..\..\src\sampler\jittered_sampler.cpp" />
     <ClCompile Include="..\..\src\sampler\sampler.cpp" />
     <ClCompile Include="..\..\src\texture\texture.cpp" />
+    <ClCompile Include="..\..\src\texture\texture_sampler.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="..\..\src\bxdf\bsdf.h" />
@@ -47,6 +48,7 @@
     <ClInclude Include="..\..\src\sampler\jittered_sampler.h" />
     <ClInclude Include="..\..\src\sampler\sampler.h" />
     <ClInclude Include="..\..\src\texture\texture.h" />
+    <ClInclude Include="..\..\src\texture\texture_sampler.h" />
   </ItemGroup>
   <PropertyGroup Label="Globals">
     <ProjectGuid>{AD419112-147E-46B1-B34C-2A20737C63C9}</ProjectGuid>
