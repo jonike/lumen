@@ -69,6 +69,9 @@
     <ClCompile Include="..\..\src\texture\point_sampler.cpp">
       <Filter>src\texture</Filter>
     </ClCompile>
+    <ClCompile Include="..\..\src\texture\bilinear_sampler.cpp">
+      <Filter>src\texture</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="..\..\src\image\image.h">
@@ -114,6 +117,9 @@
       <Filter>src\texture</Filter>
     </ClInclude>
     <ClInclude Include="..\..\src\texture\point_sampler.h">
+      <Filter>src\texture</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\src\texture\bilinear_sampler.h">
       <Filter>src\texture</Filter>
     </ClInclude>
   </ItemGroup>

@@ -31,6 +31,7 @@
     <ClCompile Include="..\..\src\main.cpp" />
     <ClCompile Include="..\..\src\sampler\jittered_sampler.cpp" />
     <ClCompile Include="..\..\src\sampler\sampler.cpp" />
+    <ClCompile Include="..\..\src\texture\bilinear_sampler.cpp" />
     <ClCompile Include="..\..\src\texture\point_sampler.cpp" />
     <ClCompile Include="..\..\src\texture\texture.cpp" />
     <ClCompile Include="..\..\src\texture\texture_sampler.cpp" />
@@ -48,6 +49,7 @@
     <ClInclude Include="..\..\src\image\image.h" />
     <ClInclude Include="..\..\src\sampler\jittered_sampler.h" />
     <ClInclude Include="..\..\src\sampler\sampler.h" />
+    <ClInclude Include="..\..\src\texture\bilinear_sampler.h" />
     <ClInclude Include="..\..\src\texture\point_sampler.h" />
     <ClInclude Include="..\..\src\texture\texture.h" />
     <ClInclude Include="..\..\src\texture\texture_sampler.h" />
