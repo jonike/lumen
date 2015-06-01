@@ -75,6 +75,9 @@
     <ClCompile Include="..\..\src\texture\texture_cache.cpp">
       <Filter>src\texture</Filter>
     </ClCompile>
+    <ClCompile Include="..\..\src\bxdf\diffuse_brdf.cpp">
+      <Filter>src\bxdf</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="..\..\src\image\image.h">
@@ -127,6 +130,9 @@
     </ClInclude>
     <ClInclude Include="..\..\src\texture\texture_cache.h">
       <Filter>src\texture</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\src\bxdf\diffuse_brdf.h">
+      <Filter>src\bxdf</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>
