@@ -34,6 +34,7 @@
     <ClCompile Include="..\..\src\texture\bilinear_sampler.cpp" />
     <ClCompile Include="..\..\src\texture\point_sampler.cpp" />
     <ClCompile Include="..\..\src\texture\texture.cpp" />
+    <ClCompile Include="..\..\src\texture\texture_cache.cpp" />
     <ClCompile Include="..\..\src\texture\texture_sampler.cpp" />
   </ItemGroup>
   <ItemGroup>
@@ -52,6 +53,7 @@
     <ClInclude Include="..\..\src\texture\bilinear_sampler.h" />
     <ClInclude Include="..\..\src\texture\point_sampler.h" />
     <ClInclude Include="..\..\src\texture\texture.h" />
+    <ClInclude Include="..\..\src\texture\texture_cache.h" />
     <ClInclude Include="..\..\src\texture\texture_sampler.h" />
   </ItemGroup>
   <PropertyGroup Label="Globals">

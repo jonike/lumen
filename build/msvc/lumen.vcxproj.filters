@@ -72,6 +72,9 @@
     <ClCompile Include="..\..\src\texture\bilinear_sampler.cpp">
       <Filter>src\texture</Filter>
     </ClCompile>
+    <ClCompile Include="..\..\src\texture\texture_cache.cpp">
+      <Filter>src\texture</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="..\..\src\image\image.h">
@@ -120,6 +123,9 @@
       <Filter>src\texture</Filter>
     </ClInclude>
     <ClInclude Include="..\..\src\texture\bilinear_sampler.h">
+      <Filter>src\texture</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\src\texture\texture_cache.h">
       <Filter>src\texture</Filter>
     </ClInclude>
   </ItemGroup>
