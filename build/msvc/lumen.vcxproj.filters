@@ -81,6 +81,9 @@
     <ClCompile Include="..\..\src\bxdf\diffuse_brdf.cpp">
       <Filter>src\bxdf</Filter>
     </ClCompile>
+    <ClCompile Include="..\..\src\acceleration\null_acceleration.cpp">
+      <Filter>src\acceleration</Filter>
+    </ClCompile>
     <ClCompile Include="..\..\src\acceleration\acceleration_structure.cpp">
       <Filter>src\acceleration</Filter>
     </ClCompile>
@@ -141,6 +144,9 @@
       <Filter>src\bxdf</Filter>
     </ClInclude>
     <ClInclude Include="..\..\src\acceleration\acceleration_structure.h">
+      <Filter>src\acceleration</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\src\acceleration\null_acceleration.h">
       <Filter>src\acceleration</Filter>
     </ClInclude>
   </ItemGroup>
