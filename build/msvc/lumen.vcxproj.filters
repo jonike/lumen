@@ -22,6 +22,9 @@
     <Filter Include="src\texture">
       <UniqueIdentifier>{1fc70b74-7544-4523-9bf2-200ed27b4508}</UniqueIdentifier>
     </Filter>
+    <Filter Include="src\acceleration">
+      <UniqueIdentifier>{8df22d26-7094-42ee-b528-54882cd547e2}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="..\..\src\main.cpp">
@@ -78,6 +81,9 @@
     <ClCompile Include="..\..\src\bxdf\diffuse_brdf.cpp">
       <Filter>src\bxdf</Filter>
     </ClCompile>
+    <ClCompile Include="..\..\src\acceleration\acceleration_structure.cpp">
+      <Filter>src\acceleration</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="..\..\src\image\image.h">
@@ -133,6 +139,9 @@
     </ClInclude>
     <ClInclude Include="..\..\src\bxdf\diffuse_brdf.h">
       <Filter>src\bxdf</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\src\acceleration\acceleration_structure.h">
+      <Filter>src\acceleration</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>
