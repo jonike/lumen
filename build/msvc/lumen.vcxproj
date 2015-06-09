@@ -37,6 +37,7 @@
     <ClCompile Include="..\..\src\light\point_light.cpp" />
     <ClCompile Include="..\..\src\main.cpp" />
     <ClCompile Include="..\..\src\renderer\renderer.cpp" />
+    <ClCompile Include="..\..\src\renderer\render_task.cpp" />
     <ClCompile Include="..\..\src\sampler\jittered_sampler.cpp" />
     <ClCompile Include="..\..\src\sampler\sampler.cpp" />
     <ClCompile Include="..\..\src\texture\bilinear_sampler.cpp" />
@@ -64,6 +65,7 @@
     <ClInclude Include="..\..\src\light\light.h" />
     <ClInclude Include="..\..\src\light\point_light.h" />
     <ClInclude Include="..\..\src\renderer\renderer.h" />
+    <ClInclude Include="..\..\src\renderer\render_task.h" />
     <ClInclude Include="..\..\src\sampler\jittered_sampler.h" />
     <ClInclude Include="..\..\src\sampler\sampler.h" />
     <ClInclude Include="..\..\src\texture\bilinear_sampler.h" />

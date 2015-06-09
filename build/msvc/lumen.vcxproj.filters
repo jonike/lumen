@@ -108,6 +108,9 @@
     <ClCompile Include="..\..\src\renderer\renderer.cpp">
       <Filter>src\renderer</Filter>
     </ClCompile>
+    <ClCompile Include="..\..\src\renderer\render_task.cpp">
+      <Filter>src\renderer</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="..\..\src\image\image.h">
@@ -184,6 +187,9 @@
     </ClInclude>
     <ClInclude Include="..\..\src\light\point_light.h">
       <Filter>src\light</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\src\renderer\render_task.h">
+      <Filter>src\renderer</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>
