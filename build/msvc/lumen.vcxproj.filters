@@ -25,8 +25,11 @@
     <Filter Include="src\acceleration">
       <UniqueIdentifier>{8df22d26-7094-42ee-b528-54882cd547e2}</UniqueIdentifier>
     </Filter>
+    <Filter Include="src\renderer">
+      <UniqueIdentifier>{8d8c3558-1e52-43f5-9434-21f5ae12ab82}</UniqueIdentifier>
+    </Filter>
     <Filter Include="src\light">
-      <UniqueIdentifier>{4f1513c9-2db0-4087-88ce-c3a0411d3290}</UniqueIdentifier>
+      <UniqueIdentifier>{2ae8c3bf-20c8-496e-9829-cf25df021b22}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
   <ItemGroup>
@@ -90,17 +93,20 @@
     <ClCompile Include="..\..\src\acceleration\acceleration_structure.cpp">
       <Filter>src\acceleration</Filter>
     </ClCompile>
-    <ClCompile Include="..\..\src\light\light.cpp">
+    <ClCompile Include="..\..\src\light\area_light.cpp">
       <Filter>src\light</Filter>
     </ClCompile>
     <ClCompile Include="..\..\src\light\directional_light.cpp">
       <Filter>src\light</Filter>
     </ClCompile>
+    <ClCompile Include="..\..\src\light\light.cpp">
+      <Filter>src\light</Filter>
+    </ClCompile>
     <ClCompile Include="..\..\src\light\point_light.cpp">
       <Filter>src\light</Filter>
     </ClCompile>
-    <ClCompile Include="..\..\src\light\area_light.cpp">
-      <Filter>src\light</Filter>
+    <ClCompile Include="..\..\src\renderer\renderer.cpp">
+      <Filter>src\renderer</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -164,16 +170,19 @@
     <ClInclude Include="..\..\src\acceleration\null_acceleration.h">
       <Filter>src\acceleration</Filter>
     </ClInclude>
-    <ClInclude Include="..\..\src\light\light.h">
+    <ClInclude Include="..\..\src\renderer\renderer.h">
+      <Filter>src\renderer</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\src\light\area_light.h">
       <Filter>src\light</Filter>
     </ClInclude>
     <ClInclude Include="..\..\src\light\directional_light.h">
       <Filter>src\light</Filter>
     </ClInclude>
-    <ClInclude Include="..\..\src\light\point_light.h">
+    <ClInclude Include="..\..\src\light\light.h">
       <Filter>src\light</Filter>
     </ClInclude>
-    <ClInclude Include="..\..\src\light\area_light.h">
+    <ClInclude Include="..\..\src\light\point_light.h">
       <Filter>src\light</Filter>
     </ClInclude>
   </ItemGroup>
