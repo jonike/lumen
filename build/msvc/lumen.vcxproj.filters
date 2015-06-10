@@ -111,6 +111,9 @@
     <ClCompile Include="..\..\src\renderer\render_task.cpp">
       <Filter>src\renderer</Filter>
     </ClCompile>
+    <ClCompile Include="..\..\src\renderer\path_tracer.cpp">
+      <Filter>src\renderer</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="..\..\src\image\image.h">
@@ -189,6 +192,9 @@
       <Filter>src\light</Filter>
     </ClInclude>
     <ClInclude Include="..\..\src\renderer\render_task.h">
+      <Filter>src\renderer</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\src\renderer\path_tracer.h">
       <Filter>src\renderer</Filter>
     </ClInclude>
   </ItemGroup>
