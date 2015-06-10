@@ -25,6 +25,9 @@
     <Filter Include="src\acceleration">
       <UniqueIdentifier>{8df22d26-7094-42ee-b528-54882cd547e2}</UniqueIdentifier>
     </Filter>
+    <Filter Include="src\light">
+      <UniqueIdentifier>{4f1513c9-2db0-4087-88ce-c3a0411d3290}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="..\..\src\main.cpp">
@@ -87,6 +90,9 @@
     <ClCompile Include="..\..\src\acceleration\acceleration_structure.cpp">
       <Filter>src\acceleration</Filter>
     </ClCompile>
+    <ClCompile Include="..\..\src\light\light.cpp">
+      <Filter>src\light</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="..\..\src\image\image.h">
@@ -148,6 +154,9 @@
     </ClInclude>
     <ClInclude Include="..\..\src\acceleration\null_acceleration.h">
       <Filter>src\acceleration</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\src\light\light.h">
+      <Filter>src\light</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>
