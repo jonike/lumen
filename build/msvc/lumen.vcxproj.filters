@@ -96,6 +96,9 @@
     <ClCompile Include="..\..\src\light\directional_light.cpp">
       <Filter>src\light</Filter>
     </ClCompile>
+    <ClCompile Include="..\..\src\light\point_light.cpp">
+      <Filter>src\light</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="..\..\src\image\image.h">
@@ -162,6 +165,9 @@
       <Filter>src\light</Filter>
     </ClInclude>
     <ClInclude Include="..\..\src\light\directional_light.h">
+      <Filter>src\light</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\src\light\point_light.h">
       <Filter>src\light</Filter>
     </ClInclude>
   </ItemGroup>
