@@ -41,6 +41,10 @@
     <ClCompile Include="..\..\src\renderer\render_task.cpp" />
     <ClCompile Include="..\..\src\sampler\jittered_sampler.cpp" />
     <ClCompile Include="..\..\src\sampler\sampler.cpp" />
+    <ClCompile Include="..\..\src\scene\geometry_factory.cpp" />
+    <ClCompile Include="..\..\src\scene\light_factory.cpp" />
+    <ClCompile Include="..\..\src\scene\material_factory.cpp" />
+    <ClCompile Include="..\..\src\scene\render_context.cpp" />
     <ClCompile Include="..\..\src\scene\scene.cpp" />
     <ClCompile Include="..\..\src\texture\bilinear_sampler.cpp" />
     <ClCompile Include="..\..\src\texture\point_sampler.cpp" />
@@ -71,6 +75,10 @@
     <ClInclude Include="..\..\src\renderer\render_task.h" />
     <ClInclude Include="..\..\src\sampler\jittered_sampler.h" />
     <ClInclude Include="..\..\src\sampler\sampler.h" />
+    <ClInclude Include="..\..\src\scene\geometry_factory.h" />
+    <ClInclude Include="..\..\src\scene\light_factory.h" />
+    <ClInclude Include="..\..\src\scene\material_factory.h" />
+    <ClInclude Include="..\..\src\scene\render_context.h" />
     <ClInclude Include="..\..\src\scene\scene.h" />
     <ClInclude Include="..\..\src\texture\bilinear_sampler.h" />
     <ClInclude Include="..\..\src\texture\point_sampler.h" />

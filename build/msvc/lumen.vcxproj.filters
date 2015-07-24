@@ -120,6 +120,18 @@
     <ClCompile Include="..\..\src\scene\scene.cpp">
       <Filter>src\scene</Filter>
     </ClCompile>
+    <ClCompile Include="..\..\src\scene\geometry_factory.cpp">
+      <Filter>src\scene</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\src\scene\light_factory.cpp">
+      <Filter>src\scene</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\src\scene\material_factory.cpp">
+      <Filter>src\scene</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\src\scene\render_context.cpp">
+      <Filter>src\scene</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="..\..\src\image\image.h">
@@ -204,6 +216,18 @@
       <Filter>src\renderer</Filter>
     </ClInclude>
     <ClInclude Include="..\..\src\scene\scene.h">
+      <Filter>src\scene</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\src\scene\geometry_factory.h">
+      <Filter>src\scene</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\src\scene\light_factory.h">
+      <Filter>src\scene</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\src\scene\material_factory.h">
+      <Filter>src\scene</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\src\scene\render_context.h">
       <Filter>src\scene</Filter>
     </ClInclude>
   </ItemGroup>
