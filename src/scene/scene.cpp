@@ -7,6 +7,8 @@
 #include <cstdlib>
 #endif
 
+#include <render_context.h>
+
 namespace lumen {
 struct parameter_list {
         std::vector<const char*> tokens;
@@ -40,78 +42,101 @@ const char* MATTE = "matte";
 const char* DIFFUSECOLOR = "diffusecolor";
 const char* TEXTURENAME  = "texturename";
 
+static render_context context;
+
 void Begin()
 {
 #if _DEBUG
         _CrtSetDbgFlag(_CRTDBG_ALLOC_MEM_DF | _CRTDBG_LEAK_CHECK_DF);
 #endif
+
+        context.Begin();
 }
 
 void End()
 {
+        context.End();
 }
 
 void Display(const char* name)
 {
+        context.Display(name);
 }
 
 void Resolution(int width, int height)
 {
+        context.Resolution(width, height);
 }
 
 void PixelSamples(int x, int y)
 {
+        context.PixelSamples(x, y);
 }
 
 void DepthOfField(float fstop, float focallength, float focaldistance)
 {
+        context.DepthOfField(fstop, focallength, focaldistance);
 }
 
 void WorldBegin()
 {
+        context.WorldBegin();
 }
 
 void WorldEnd()
 {
+        context.WorldEnd();
 }
 
 void Geometry(const char* name, ...)
 {
         BUILD_PARAMETER_LIST(name);
+
+        context.Geometry(name, SET_PARAMETER_LIST);
 }
 
 void ObjectBegin()
 {
+        context.ObjectBegin();
 }
 
 void ObjectEnd()
 {
+        context.ObjectEnd();
 }
 
 void Light(const char* name, ...)
 {
         BUILD_PARAMETER_LIST(name);
+
+        context.Light(name, SET_PARAMETER_LIST);
 }
 
 void Material(const char* name, ...)
 {
         BUILD_PARAMETER_LIST(name);
+
+        context.Material(name, SET_PARAMETER_LIST);
 }
 
 void Projection(float fov)
 {
+        context.Projection(fov);
 }
 
 void Translate(float x, float y, float z)
 {
+        context.Translate(x, y, z);
 }
 
 void Rotate(float degrees, float x, float y, float z)
 {
+        context.Rotate(degrees, x, y, z);
 }
 
 void Scale(float x, float y, float z)
 {
+        context.Scale(x, y, z);
 }
 
 template<typename T>
