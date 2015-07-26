@@ -41,6 +41,7 @@
     <ClCompile Include="..\..\src\renderer\render_task.cpp" />
     <ClCompile Include="..\..\src\sampler\jittered_sampler.cpp" />
     <ClCompile Include="..\..\src\sampler\sampler.cpp" />
+    <ClCompile Include="..\..\src\scene\scene.cpp" />
     <ClCompile Include="..\..\src\texture\bilinear_sampler.cpp" />
     <ClCompile Include="..\..\src\texture\point_sampler.cpp" />
     <ClCompile Include="..\..\src\texture\texture.cpp" />
@@ -70,6 +71,7 @@
     <ClInclude Include="..\..\src\renderer\render_task.h" />
     <ClInclude Include="..\..\src\sampler\jittered_sampler.h" />
     <ClInclude Include="..\..\src\sampler\sampler.h" />
+    <ClInclude Include="..\..\src\scene\scene.h" />
     <ClInclude Include="..\..\src\texture\bilinear_sampler.h" />
     <ClInclude Include="..\..\src\texture\point_sampler.h" />
     <ClInclude Include="..\..\src\texture\texture.h" />
@@ -129,11 +131,11 @@
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'" />
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
     <IntDir>$(TEMP)\$(ProjectName)\$(Platform)\$(Configuration)\</IntDir>
-    <IncludePath>..\..\src\acceleration;..\..\src\bxdf;..\..\src\camera;..\..\src\geometry;..\..\src\image;..\..\src\light;..\..\src\renderer;..\..\src\sampler;..\..\src\texture;..\..\lib\nex\src;..\..\lib\nex\src\concurrency;..\..\lib\nex\src\math;..\..\lib\nex\src\resource;..\..\lib\DevIL-SDK-x86-1.7.8\include;..\..\lib\SDL2-2.0.3\include;$(IncludePath)</IncludePath>
+    <IncludePath>..\..\src\acceleration;..\..\src\bxdf;..\..\src\camera;..\..\src\geometry;..\..\src\image;..\..\src\light;..\..\src\renderer;..\..\src\sampler;..\..\src\scene;..\..\src\texture;..\..\lib\nex\src;..\..\lib\nex\src\concurrency;..\..\lib\nex\src\math;..\..\lib\nex\src\resource;..\..\lib\DevIL-SDK-x86-1.7.8\include;..\..\lib\SDL2-2.0.3\include;$(IncludePath)</IncludePath>
     <LibraryPath>..\..\lib\nex\lib\windows\Win32;..\..\lib\DevIL-SDK-x86-1.7.8\lib;..\..\lib\SDL2-2.0.3\lib\x86;$(LibraryPath)</LibraryPath>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
-    <IncludePath>..\..\src\acceleration;..\..\src\bxdf;..\..\src\camera;..\..\src\geometry;..\..\src\image;..\..\src\light;..\..\src\renderer;..\..\src\sampler;..\..\src\texture;..\..\lib\nex\src;..\..\lib\nex\src\concurrency;..\..\lib\nex\src\math;..\..\lib\nex\src\resource;..\..\lib\SDL2-2.0.3\include;$(IncludePath)</IncludePath>
+    <IncludePath>..\..\src\acceleration;..\..\src\bxdf;..\..\src\camera;..\..\src\geometry;..\..\src\image;..\..\src\light;..\..\src\renderer;..\..\src\sampler;..\..\src\scene;..\..\src\texture;..\..\lib\nex\src;..\..\lib\nex\src\concurrency;..\..\lib\nex\src\math;..\..\lib\nex\src\resource;..\..\lib\SDL2-2.0.3\include;$(IncludePath)</IncludePath>
     <OutDir>..\..\bin\$(Platform)\$(Configuration)\</OutDir>
     <IntDir>$(TEMP)\$(ProjectName)\$(Platform)\$(Configuration)\</IntDir>
     <LibraryPath>..\..\lib\nex\lib\windows\x64;..\..\lib\SDL2-2.0.3\lib\x64;$(LibraryPath)</LibraryPath>
@@ -144,11 +146,11 @@
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'" />
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
     <IntDir>$(TEMP)\$(ProjectName)\$(Platform)\$(Configuration)\</IntDir>
-    <IncludePath>..\..\src\acceleration;..\..\src\bxdf;..\..\src\camera;..\..\src\geometry;..\..\src\image;..\..\src\light;..\..\src\renderer;..\..\src\sampler;..\..\src\texture;..\..\lib\nex\src;..\..\lib\nex\src\concurrency;..\..\lib\nex\src\math;..\..\lib\nex\src\resource;..\..\lib\DevIL-SDK-x86-1.7.8\include;..\..\lib\SDL2-2.0.3\include;$(IncludePath)</IncludePath>
+    <IncludePath>..\..\src\acceleration;..\..\src\bxdf;..\..\src\camera;..\..\src\geometry;..\..\src\image;..\..\src\light;..\..\src\renderer;..\..\src\sampler;..\..\src\scene;..\..\src\texture;..\..\lib\nex\src;..\..\lib\nex\src\concurrency;..\..\lib\nex\src\math;..\..\lib\nex\src\resource;..\..\lib\DevIL-SDK-x86-1.7.8\include;..\..\lib\SDL2-2.0.3\include;$(IncludePath)</IncludePath>
     <LibraryPath>..\..\lib\nex\lib\windows\Win32;..\..\lib\DevIL-SDK-x86-1.7.8\lib;..\..\lib\SDL2-2.0.3\lib\x86;$(LibraryPath)</LibraryPath>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
-    <IncludePath>..\..\src\acceleration;..\..\src\bxdf;..\..\src\camera;..\..\src\geometry;..\..\src\image;..\..\src\light;..\..\src\renderer;..\..\src\sampler;..\..\src\texture;..\..\lib\nex\src;..\..\lib\nex\src\concurrency;..\..\lib\nex\src\math;..\..\lib\nex\src\resource;..\..\lib\SDL2-2.0.3\include;$(IncludePath)</IncludePath>
+    <IncludePath>..\..\src\acceleration;..\..\src\bxdf;..\..\src\camera;..\..\src\geometry;..\..\src\image;..\..\src\light;..\..\src\renderer;..\..\src\sampler;..\..\src\scene;..\..\src\texture;..\..\lib\nex\src;..\..\lib\nex\src\concurrency;..\..\lib\nex\src\math;..\..\lib\nex\src\resource;..\..\lib\SDL2-2.0.3\include;$(IncludePath)</IncludePath>
     <OutDir>..\..\bin\$(Platform)\$(Configuration)\</OutDir>
     <IntDir>$(TEMP)\$(ProjectName)\$(Platform)\$(Configuration)\</IntDir>
     <LibraryPath>..\..\lib\nex\lib\windows\x64;..\..\lib\SDL2-2.0.3\lib\x64;$(LibraryPath)</LibraryPath>
