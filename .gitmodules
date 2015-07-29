@@ -1,0 +1,3 @@
+[submodule "lib/nex"]
+	path = lib/nex
+	url = https://github.com/jlukacs/nex.git

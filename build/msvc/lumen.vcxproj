@@ -78,14 +78,14 @@
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'" />
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
     <IntDir>$(TEMP)\$(ProjectName)\$(Platform)\$(Configuration)\</IntDir>
-    <IncludePath>..\..\src\image;..\..\lib\SDL2-2.0.3\include;$(IncludePath)</IncludePath>
-    <LibraryPath>..\..\lib\SDL2-2.0.3\lib\x86;$(LibraryPath)</LibraryPath>
+    <IncludePath>..\..\src\image;..\..\lib\nex\src;..\..\lib\nex\src\concurrency;..\..\lib\nex\src\math;..\..\lib\nex\src\resource;..\..\lib\SDL2-2.0.3\include;$(IncludePath)</IncludePath>
+    <LibraryPath>..\..\lib\nex\lib\windows\Win32;..\..\lib\SDL2-2.0.3\lib\x86;$(LibraryPath)</LibraryPath>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
-    <IncludePath>..\..\src\image;..\..\lib\SDL2-2.0.3\include;$(IncludePath)</IncludePath>
+    <IncludePath>..\..\src\image;..\..\lib\nex\src;..\..\lib\nex\src\concurrency;..\..\lib\nex\src\math;..\..\lib\nex\src\resource;..\..\lib\SDL2-2.0.3\include;$(IncludePath)</IncludePath>
     <OutDir>..\..\bin\$(Platform)\$(Configuration)\</OutDir>
     <IntDir>$(TEMP)\$(ProjectName)\$(Platform)\$(Configuration)\</IntDir>
-    <LibraryPath>..\..\lib\SDL2-2.0.3\lib\x64;$(LibraryPath)</LibraryPath>
+    <LibraryPath>..\..\lib\nex\lib\windows\x64;..\..\lib\SDL2-2.0.3\lib\x64;$(LibraryPath)</LibraryPath>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
     <OutDir>..\..\bin\$(Platform)\$(Configuration)\</OutDir>
@@ -93,14 +93,14 @@
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'" />
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
     <IntDir>$(TEMP)\$(ProjectName)\$(Platform)\$(Configuration)\</IntDir>
-    <IncludePath>..\..\src\image;..\..\lib\SDL2-2.0.3\include;$(IncludePath)</IncludePath>
-    <LibraryPath>..\..\lib\SDL2-2.0.3\lib\x86;$(LibraryPath)</LibraryPath>
+    <IncludePath>..\..\src\image;..\..\lib\nex\src;..\..\lib\nex\src\concurrency;..\..\lib\nex\src\math;..\..\lib\nex\src\resource;..\..\lib\SDL2-2.0.3\include;$(IncludePath)</IncludePath>
+    <LibraryPath>..\..\lib\nex\lib\windows\Win32;..\..\lib\SDL2-2.0.3\lib\x86;$(LibraryPath)</LibraryPath>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
-    <IncludePath>..\..\src\image;..\..\lib\SDL2-2.0.3\include;$(IncludePath)</IncludePath>
+    <IncludePath>..\..\src\image;..\..\lib\nex\src;..\..\lib\nex\src\concurrency;..\..\lib\nex\src\math;..\..\lib\nex\src\resource;..\..\lib\SDL2-2.0.3\include;$(IncludePath)</IncludePath>
     <OutDir>..\..\bin\$(Platform)\$(Configuration)\</OutDir>
     <IntDir>$(TEMP)\$(ProjectName)\$(Platform)\$(Configuration)\</IntDir>
-    <LibraryPath>..\..\lib\SDL2-2.0.3\lib\x64;$(LibraryPath)</LibraryPath>
+    <LibraryPath>..\..\lib\nex\lib\windows\x64;..\..\lib\SDL2-2.0.3\lib\x64;$(LibraryPath)</LibraryPath>
   </PropertyGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
     <ClCompile>
@@ -112,7 +112,7 @@
     </ClCompile>
     <Link>
       <GenerateDebugInformation>true</GenerateDebugInformation>
-      <AdditionalDependencies>SDL2.lib;SDL2main.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <AdditionalDependencies>nexd.lib;SDL2.lib;SDL2main.lib;%(AdditionalDependencies)</AdditionalDependencies>
       <SubSystem>Console</SubSystem>
       <IgnoreSpecificDefaultLibraries>msvcrt.lib</IgnoreSpecificDefaultLibraries>
     </Link>
@@ -132,7 +132,7 @@
     <Link>
       <GenerateDebugInformation>true</GenerateDebugInformation>
       <SubSystem>Console</SubSystem>
-      <AdditionalDependencies>SDL2.lib;SDL2main.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <AdditionalDependencies>nexd.lib;SDL2.lib;SDL2main.lib;%(AdditionalDependencies)</AdditionalDependencies>
       <IgnoreSpecificDefaultLibraries>msvcrt.lib</IgnoreSpecificDefaultLibraries>
     </Link>
     <PostBuildEvent>
@@ -161,7 +161,7 @@
       <GenerateDebugInformation>true</GenerateDebugInformation>
       <EnableCOMDATFolding>true</EnableCOMDATFolding>
       <OptimizeReferences>true</OptimizeReferences>
-      <AdditionalDependencies>SDL2.lib;SDL2main.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <AdditionalDependencies>nex.lib;SDL2.lib;SDL2main.lib;%(AdditionalDependencies)</AdditionalDependencies>
       <SubSystem>Console</SubSystem>
     </Link>
     <PostBuildEvent />
@@ -191,7 +191,7 @@
       <EnableCOMDATFolding>true</EnableCOMDATFolding>
       <OptimizeReferences>true</OptimizeReferences>
       <SubSystem>Console</SubSystem>
-      <AdditionalDependencies>SDL2.lib;SDL2main.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <AdditionalDependencies>nex.lib;SDL2.lib;SDL2main.lib;%(AdditionalDependencies)</AdditionalDependencies>
     </Link>
     <PostBuildEvent>
       <Command>
