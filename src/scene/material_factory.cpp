@@ -5,17 +5,21 @@
 #include <point_sampler.h>
 #include <render_context.h>
 #include <scene.h>
+#include <specular_reflection_brdf.h>
 #include <stdexcept>
 #include <texture_cache.h>
 
 namespace lumen {
 static bsdf_ptr create_matte(const attributes& attr, int num, const char* tokens[], void* params[]);
+static bsdf_ptr create_chrome(const attributes& attr, int num, const char* tokens[], void* params[]);
 
 bsdf_ptr create_material(const attributes& attr, const char* name,
                         int num, const char* tokens[], void* params[])
 {
         if (strcmp(MATTE, name) == 0) {
                 return create_matte(attr, num, tokens, params);
+        } else if (strcmp(CHROME, name) == 0) {
+                return create_chrome(attr, num, tokens, params);
         } else {
                 throw std::invalid_argument("invalid material " + std::string(name));
         }
@@ -40,5 +44,21 @@ static bsdf_ptr create_matte(const attributes& attr, int num, const char* tokens
         matte->add_bxdf(bxdf_ptr(new diffuse_brdf(nex::color(color[0], color[1], color[2]), sampler)));
 
         return bsdf_ptr(matte);
+}
+
+static bsdf_ptr create_chrome(const attributes& attr, int num, const char* tokens[], void* params[])
+{
+        float color[3] = {1.0f, 1.0f, 1.0f};
+
+        for (int i = 0; i < num; ++i) {
+                if (strcmp(SPECULARCOLOR, tokens[i]) == 0) {
+                        memcpy(color, reinterpret_cast<float*>(params[i]), sizeof(color));
+                }
+        }
+
+        bsdf* chrome = new bsdf();
+        chrome->add_bxdf(bxdf_ptr(new specular_reflection_brdf(nex::color(color[0], color[1], color[2]))));
+
+        return bsdf_ptr(chrome);
 }
 }

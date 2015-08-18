@@ -24,6 +24,7 @@
     <ClCompile Include="..\..\src\bxdf\bsdf.cpp" />
     <ClCompile Include="..\..\src\bxdf\bxdf.cpp" />
     <ClCompile Include="..\..\src\bxdf\diffuse_brdf.cpp" />
+    <ClCompile Include="..\..\src\bxdf\specular_reflection_brdf.cpp" />
     <ClCompile Include="..\..\src\camera\thin_lens.cpp" />
     <ClCompile Include="..\..\src\geometry\bound.cpp" />
     <ClCompile Include="..\..\src\geometry\geometry.cpp" />
@@ -58,6 +59,7 @@
     <ClInclude Include="..\..\src\bxdf\bsdf.h" />
     <ClInclude Include="..\..\src\bxdf\bxdf.h" />
     <ClInclude Include="..\..\src\bxdf\diffuse_brdf.h" />
+    <ClInclude Include="..\..\src\bxdf\specular_reflection_brdf.h" />
     <ClInclude Include="..\..\src\camera\camera.h" />
     <ClInclude Include="..\..\src\camera\thin_lens.h" />
     <ClInclude Include="..\..\src\geometry\bound.h" />
