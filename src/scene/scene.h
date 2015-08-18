@@ -20,10 +20,12 @@ extern const char* TEXTURENAME;
 // material types
 extern const char* MATTE;
 extern const char* CHROME;
+extern const char* PLASTIC;
 
 // material parameters
 extern const char* DIFFUSECOLOR;
 extern const char* SPECULARCOLOR;
+extern const char* EXPONENT;
 extern const char* TEXTURENAME;
 
 // main initialization and shutdown
