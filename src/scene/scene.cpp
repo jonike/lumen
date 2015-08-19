@@ -37,14 +37,17 @@ const char* COLOR     = "color";
 const char* DIRECTION = "direction";
 const char* POSITION  = "position";
 
-const char* MATTE = "matte";
-const char* CHROME = "chrome";
+const char* MATTE   = "matte";
+const char* CHROME  = "chrome";
 const char* PLASTIC = "plastic";
+const char* GLASS   = "glass";
 
-const char* DIFFUSECOLOR = "diffusecolor";
+const char* DIFFUSECOLOR  = "diffusecolor";
 const char* SPECULARCOLOR = "specularcolor";
 const char* EXPONENT      = "exponent";
-const char* TEXTURENAME  = "texturename";
+const char* NI            = "ni";
+const char* NT            = "nt";
+const char* TEXTURENAME   = "texturename";
 
 static render_context context;
 

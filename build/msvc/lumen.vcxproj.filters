@@ -138,6 +138,12 @@
     <ClCompile Include="..\..\src\bxdf\glossy_reflection_brdf.cpp">
       <Filter>src\bxdf</Filter>
     </ClCompile>
+    <ClCompile Include="..\..\src\bxdf\fresnel_reflection_brdf.cpp">
+      <Filter>src\bxdf</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\src\bxdf\fresnel_refraction_btdf.cpp">
+      <Filter>src\bxdf</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="..\..\src\image\image.h">
@@ -240,6 +246,12 @@
       <Filter>src\bxdf</Filter>
     </ClInclude>
     <ClInclude Include="..\..\src\bxdf\glossy_reflection_brdf.h">
+      <Filter>src\bxdf</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\src\bxdf\fresnel_reflection_brdf.h">
+      <Filter>src\bxdf</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\src\bxdf\fresnel_refraction_btdf.h">
       <Filter>src\bxdf</Filter>
     </ClInclude>
   </ItemGroup>

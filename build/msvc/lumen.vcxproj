@@ -24,6 +24,8 @@
     <ClCompile Include="..\..\src\bxdf\bsdf.cpp" />
     <ClCompile Include="..\..\src\bxdf\bxdf.cpp" />
     <ClCompile Include="..\..\src\bxdf\diffuse_brdf.cpp" />
+    <ClCompile Include="..\..\src\bxdf\fresnel_reflection_brdf.cpp" />
+    <ClCompile Include="..\..\src\bxdf\fresnel_refraction_btdf.cpp" />
     <ClCompile Include="..\..\src\bxdf\glossy_reflection_brdf.cpp" />
     <ClCompile Include="..\..\src\bxdf\specular_reflection_brdf.cpp" />
     <ClCompile Include="..\..\src\camera\thin_lens.cpp" />
@@ -60,6 +62,8 @@
     <ClInclude Include="..\..\src\bxdf\bsdf.h" />
     <ClInclude Include="..\..\src\bxdf\bxdf.h" />
     <ClInclude Include="..\..\src\bxdf\diffuse_brdf.h" />
+    <ClInclude Include="..\..\src\bxdf\fresnel_reflection_brdf.h" />
+    <ClInclude Include="..\..\src\bxdf\fresnel_refraction_btdf.h" />
     <ClInclude Include="..\..\src\bxdf\glossy_reflection_brdf.h" />
     <ClInclude Include="..\..\src\bxdf\specular_reflection_brdf.h" />
     <ClInclude Include="..\..\src\camera\camera.h" />

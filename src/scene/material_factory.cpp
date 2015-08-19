@@ -1,6 +1,8 @@
 #include <bilinear_sampler.h>
 #include <bsdf.h>
 #include <diffuse_brdf.h>
+#include <fresnel_reflection_brdf.h>
+#include <fresnel_refraction_btdf.h>
 #include <glossy_reflection_brdf.h>
 #include <material_factory.h>
 #include <point_sampler.h>
@@ -14,6 +16,7 @@ namespace lumen {
 static bsdf_ptr create_matte(const attributes& attr, int num, const char* tokens[], void* params[]);
 static bsdf_ptr create_chrome(const attributes& attr, int num, const char* tokens[], void* params[]);
 static bsdf_ptr create_plastic(const attributes& attr, int num, const char* tokens[], void* params[]);
+static bsdf_ptr create_glass(const attributes& attr, int num, const char* tokens[], void* params[]);
 
 bsdf_ptr create_material(const attributes& attr, const char* name,
                         int num, const char* tokens[], void* params[])
@@ -24,6 +27,8 @@ bsdf_ptr create_material(const attributes& attr, const char* name,
                 return create_chrome(attr, num, tokens, params);
         } else if (strcmp(PLASTIC, name) == 0) {
                 return create_plastic(attr, num, tokens, params);
+        } else if (strcmp(GLASS, name) == 0) {
+                return create_glass(attr, num, tokens, params);
         } else {
                 throw std::invalid_argument("invalid material " + std::string(name));
         }
@@ -77,7 +82,7 @@ static bsdf_ptr create_plastic(const attributes& attr, int num, const char* toke
                 if (strcmp(TEXTURENAME, tokens[i]) == 0) {
                         sampler.reset(new point_sampler(
                                 texture_cache::load(reinterpret_cast<char*>(params[i])),
-                                AM_WRAP, AM_WRAP)); 
+                                AM_WRAP, AM_WRAP));
                 } else if (strcmp(DIFFUSECOLOR, tokens[i]) == 0) {
                         memcpy(diffuse, reinterpret_cast<float*>(params[i]), sizeof(diffuse));
                 } else if (strcmp(SPECULARCOLOR, tokens[i]) == 0) {
@@ -92,5 +97,28 @@ static bsdf_ptr create_plastic(const attributes& attr, int num, const char* toke
         plastic->add_bxdf(bxdf_ptr(new glossy_reflection_brdf(nex::color(specular[0], specular[1], specular[2]), exponent)));
 
         return bsdf_ptr(plastic);
+}
+
+static bsdf_ptr create_glass(const attributes& attr, int num, const char* tokens[], void* params[])
+{
+        float specular[3] = {1.0f, 1.0f, 1.0f};
+        float ni = 1.0f;
+        float nt = 1.5f;
+
+        for (int i = 0; i < num; ++i) {
+                if (strcmp(SPECULARCOLOR, tokens[i]) == 0) {
+                        memcpy(specular, reinterpret_cast<float*>(params[i]), sizeof(specular));
+                } else if (strcmp(NI, tokens[i]) == 0) {
+                        ni = *reinterpret_cast<float*>(params[i]);
+                } else if (strcmp(NT, tokens[i]) == 0) {
+                        nt = *reinterpret_cast<float*>(params[i]);
+                }
+        }
+
+        bsdf* glass = new bsdf();
+        glass->add_bxdf(bxdf_ptr(new fresnel_reflection_brdf(nex::color(specular[0], specular[1], specular[2]), ni, nt)));
+        glass->add_bxdf(bxdf_ptr(new fresnel_refraction_btdf(nex::color(specular[0], specular[1], specular[2]), ni, nt)));
+
+        return bsdf_ptr(glass);
 }
 }
