@@ -96,15 +96,11 @@ nex::color path_tracer::indirect_illumination(const sampler* sampler, const nex:
                 return nex::color::black();
         }
 
-        nex::ray reflected_ray(surface.position, wi, FLT_MAX, ray->depth + 1);
-
-        float cos = nex::dot(surface.normal, wi);
-
-        if (cos <= 0.0f) {
-                return nex::color::black();
-        }
+        nex::ray reflected_ray(surface.position + nex::EPSILON * wi, wi, FLT_MAX, ray->depth + 1);
 
         bool emittance = (surface.bsdf->get_bxdf(BXDF_SPECULAR) != nullptr);
+
+        float cos = std::abs(nex::dot(surface.normal, wi));
 
         return radiance(sampler, &reflected_ray, emittance) * f * cos / pdf;
 }
