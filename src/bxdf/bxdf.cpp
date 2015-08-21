@@ -45,7 +45,7 @@ float fresnel(float ni, float nt, float cosi)
         float sint = ni / nt * std::sqrt(1.0f - cosi * cosi);
 
         // handle total internal reflection
-        if (sint >= 1.0f) {
+        if (sint > 1.0f) {
                 return 1.0f;
         }
 
