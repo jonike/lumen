@@ -20,13 +20,13 @@ nex::vector refract(const nex::vector& incident, const nex::vector& normal, floa
         }
 
         // check for total internal reflection
-        float tir = 1.0f - (*eta * *eta) * (1.0f - cos * cos);
+        float sin2t = (*eta * *eta) * (1.0f - cos * cos);
 
-        if (tir <= 0.0f) {
+        if (sin2t > 1.0f) {
                 return nex::vector(0.0f, 0.0f, 0.0f);
         }
 
-        return -(*eta) * incident + (*eta * cos - std::sqrt(tir)) * n;
+        return -(*eta) * incident + (*eta * cos - std::sqrt(1.0f - sin2t)) * n;
 }
 
 float fresnel(float ni, float nt, float cosi)
