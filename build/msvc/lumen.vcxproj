@@ -35,6 +35,7 @@
     <ClCompile Include="..\..\src\geometry\plane.cpp" />
     <ClCompile Include="..\..\src\geometry\rectangle.cpp" />
     <ClCompile Include="..\..\src\geometry\sphere.cpp" />
+    <ClCompile Include="..\..\src\geometry\triangle.cpp" />
     <ClCompile Include="..\..\src\image\image.cpp" />
     <ClCompile Include="..\..\src\light\area_light.cpp" />
     <ClCompile Include="..\..\src\light\directional_light.cpp" />
@@ -75,6 +76,7 @@
     <ClInclude Include="..\..\src\geometry\plane.h" />
     <ClInclude Include="..\..\src\geometry\rectangle.h" />
     <ClInclude Include="..\..\src\geometry\sphere.h" />
+    <ClInclude Include="..\..\src\geometry\triangle.h" />
     <ClInclude Include="..\..\src\image\image.h" />
     <ClInclude Include="..\..\src\light\area_light.h" />
     <ClInclude Include="..\..\src\light\directional_light.h" />

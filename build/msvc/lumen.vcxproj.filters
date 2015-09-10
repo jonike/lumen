@@ -147,6 +147,9 @@
     <ClCompile Include="..\..\src\acceleration\kd_tree.cpp">
       <Filter>src\acceleration</Filter>
     </ClCompile>
+    <ClCompile Include="..\..\src\geometry\triangle.cpp">
+      <Filter>src\geometry</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="..\..\src\image\image.h">
@@ -259,6 +262,9 @@
     </ClInclude>
     <ClInclude Include="..\..\src\acceleration\kd_tree.h">
       <Filter>src\acceleration</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\src\geometry\triangle.h">
+      <Filter>src\geometry</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>
