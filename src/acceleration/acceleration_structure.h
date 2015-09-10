@@ -15,6 +15,8 @@ public:
 
         bool intersect(nex::ray*, surface*) const;
         bool intersect(nex::ray*) const;
+protected:
+        bound get_world_bound() const;
 private:
         virtual bool intersect_geometry(nex::ray*, surface*) const = 0;
         virtual bool intersect_shadow(nex::ray*) const = 0;

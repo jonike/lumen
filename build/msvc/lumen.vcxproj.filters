@@ -144,6 +144,9 @@
     <ClCompile Include="..\..\src\bxdf\fresnel_refraction_btdf.cpp">
       <Filter>src\bxdf</Filter>
     </ClCompile>
+    <ClCompile Include="..\..\src\acceleration\kd_tree.cpp">
+      <Filter>src\acceleration</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="..\..\src\image\image.h">
@@ -253,6 +256,9 @@
     </ClInclude>
     <ClInclude Include="..\..\src\bxdf\fresnel_refraction_btdf.h">
       <Filter>src\bxdf</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\src\acceleration\kd_tree.h">
+      <Filter>src\acceleration</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

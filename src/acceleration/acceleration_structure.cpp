@@ -13,6 +13,11 @@ acceleration_structure::~acceleration_structure()
 {
 }
 
+bound acceleration_structure::get_world_bound() const
+{
+        return world_bound;
+}
+
 bool acceleration_structure::intersect(nex::ray* ray, surface* surface) const
 {
         if (!world_bound.intersect(*ray)) {

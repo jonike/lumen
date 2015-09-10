@@ -20,6 +20,7 @@
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="..\..\src\acceleration\acceleration_structure.cpp" />
+    <ClCompile Include="..\..\src\acceleration\kd_tree.cpp" />
     <ClCompile Include="..\..\src\acceleration\null_acceleration.cpp" />
     <ClCompile Include="..\..\src\bxdf\bsdf.cpp" />
     <ClCompile Include="..\..\src\bxdf\bxdf.cpp" />
@@ -58,6 +59,7 @@
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="..\..\src\acceleration\acceleration_structure.h" />
+    <ClInclude Include="..\..\src\acceleration\kd_tree.h" />
     <ClInclude Include="..\..\src\acceleration\null_acceleration.h" />
     <ClInclude Include="..\..\src\bxdf\bsdf.h" />
     <ClInclude Include="..\..\src\bxdf\bxdf.h" />
