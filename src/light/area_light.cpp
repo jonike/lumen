@@ -1,3 +1,4 @@
+#include <algorithm>
 #include <area_light.h>
 #include <util.h>
 

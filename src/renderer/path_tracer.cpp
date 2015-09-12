@@ -1,4 +1,5 @@
 #include <acceleration_structure.h>
+#include <algorithm>
 #include <bsdf.h>
 #include <cfloat>
 #include <geometry.h>

@@ -1,3 +1,4 @@
+#include <algorithm>
 #include <bsdf.h>
 #include <geometry.h>
 #include <util.h>

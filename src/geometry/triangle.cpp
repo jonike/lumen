@@ -1,3 +1,4 @@
+#include <algorithm>
 #include <cassert>
 #include <sampler.h>
 #include <triangle.h>

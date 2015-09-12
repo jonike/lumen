@@ -1,3 +1,4 @@
+#include <algorithm>
 #include <cassert>
 #include <exception>
 #include <image.h>

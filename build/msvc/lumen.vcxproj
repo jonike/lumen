@@ -1,5 +1,5 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<Project DefaultTargets="Build" ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+<Project DefaultTargets="Build" ToolsVersion="14.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <ItemGroup Label="ProjectConfigurations">
     <ProjectConfiguration Include="Debug|Win32">
       <Configuration>Debug</Configuration>
@@ -101,33 +101,34 @@
   <PropertyGroup Label="Globals">
     <ProjectGuid>{AD419112-147E-46B1-B34C-2A20737C63C9}</ProjectGuid>
     <RootNamespace>lumen</RootNamespace>
+    <WindowsTargetPlatformVersion>8.1</WindowsTargetPlatformVersion>
   </PropertyGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
     <ConfigurationType>Application</ConfigurationType>
     <UseDebugLibraries>true</UseDebugLibraries>
     <CharacterSet>MultiByte</CharacterSet>
-    <PlatformToolset>v110</PlatformToolset>
+    <PlatformToolset>v140</PlatformToolset>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'" Label="Configuration">
     <ConfigurationType>Application</ConfigurationType>
     <UseDebugLibraries>true</UseDebugLibraries>
     <CharacterSet>MultiByte</CharacterSet>
-    <PlatformToolset>v110</PlatformToolset>
+    <PlatformToolset>v140</PlatformToolset>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="Configuration">
     <ConfigurationType>Application</ConfigurationType>
     <UseDebugLibraries>false</UseDebugLibraries>
     <WholeProgramOptimization>true</WholeProgramOptimization>
     <CharacterSet>MultiByte</CharacterSet>
-    <PlatformToolset>v110</PlatformToolset>
+    <PlatformToolset>v140</PlatformToolset>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'" Label="Configuration">
     <ConfigurationType>Application</ConfigurationType>
     <UseDebugLibraries>false</UseDebugLibraries>
     <WholeProgramOptimization>true</WholeProgramOptimization>
     <CharacterSet>MultiByte</CharacterSet>
-    <PlatformToolset>v110</PlatformToolset>
+    <PlatformToolset>v140</PlatformToolset>
   </PropertyGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
   <ImportGroup Label="ExtensionSettings">
@@ -150,14 +151,14 @@
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'" />
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
-    <IntDir>$(TEMP)\$(ProjectName)\$(Platform)\$(Configuration)\</IntDir>
+    <IntDir>$(OutDir)\tmp\</IntDir>
     <IncludePath>..\..\src\acceleration;..\..\src\bxdf;..\..\src\camera;..\..\src\geometry;..\..\src\image;..\..\src\light;..\..\src\renderer;..\..\src\sampler;..\..\src\scene;..\..\src\texture;..\..\lib\nex\src;..\..\lib\nex\src\concurrency;..\..\lib\nex\src\math;..\..\lib\nex\src\resource;..\..\lib\DevIL-SDK-x86-1.7.8\include;..\..\lib\SDL2-2.0.3\include;$(IncludePath)</IncludePath>
     <LibraryPath>..\..\lib\nex\lib\windows\Win32;..\..\lib\DevIL-SDK-x86-1.7.8\lib;..\..\lib\SDL2-2.0.3\lib\x86;$(LibraryPath)</LibraryPath>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
     <IncludePath>..\..\src\acceleration;..\..\src\bxdf;..\..\src\camera;..\..\src\geometry;..\..\src\image;..\..\src\light;..\..\src\renderer;..\..\src\sampler;..\..\src\scene;..\..\src\texture;..\..\lib\nex\src;..\..\lib\nex\src\concurrency;..\..\lib\nex\src\math;..\..\lib\nex\src\resource;..\..\lib\SDL2-2.0.3\include;$(IncludePath)</IncludePath>
     <OutDir>..\..\bin\$(Platform)\$(Configuration)\</OutDir>
-    <IntDir>$(TEMP)\$(ProjectName)\$(Platform)\$(Configuration)\</IntDir>
+    <IntDir>$(OutDir)\tmp\</IntDir>
     <LibraryPath>..\..\lib\nex\lib\windows\x64;..\..\lib\SDL2-2.0.3\lib\x64;$(LibraryPath)</LibraryPath>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
@@ -165,14 +166,14 @@
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'" />
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
-    <IntDir>$(TEMP)\$(ProjectName)\$(Platform)\$(Configuration)\</IntDir>
+    <IntDir>$(OutDir)\tmp\</IntDir>
     <IncludePath>..\..\src\acceleration;..\..\src\bxdf;..\..\src\camera;..\..\src\geometry;..\..\src\image;..\..\src\light;..\..\src\renderer;..\..\src\sampler;..\..\src\scene;..\..\src\texture;..\..\lib\nex\src;..\..\lib\nex\src\concurrency;..\..\lib\nex\src\math;..\..\lib\nex\src\resource;..\..\lib\DevIL-SDK-x86-1.7.8\include;..\..\lib\SDL2-2.0.3\include;$(IncludePath)</IncludePath>
     <LibraryPath>..\..\lib\nex\lib\windows\Win32;..\..\lib\DevIL-SDK-x86-1.7.8\lib;..\..\lib\SDL2-2.0.3\lib\x86;$(LibraryPath)</LibraryPath>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
     <IncludePath>..\..\src\acceleration;..\..\src\bxdf;..\..\src\camera;..\..\src\geometry;..\..\src\image;..\..\src\light;..\..\src\renderer;..\..\src\sampler;..\..\src\scene;..\..\src\texture;..\..\lib\nex\src;..\..\lib\nex\src\concurrency;..\..\lib\nex\src\math;..\..\lib\nex\src\resource;..\..\lib\SDL2-2.0.3\include;$(IncludePath)</IncludePath>
     <OutDir>..\..\bin\$(Platform)\$(Configuration)\</OutDir>
-    <IntDir>$(TEMP)\$(ProjectName)\$(Platform)\$(Configuration)\</IntDir>
+    <IntDir>$(OutDir)\tmp\</IntDir>
     <LibraryPath>..\..\lib\nex\lib\windows\x64;..\..\lib\SDL2-2.0.3\lib\x64;$(LibraryPath)</LibraryPath>
   </PropertyGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
