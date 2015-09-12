@@ -10,21 +10,25 @@
 #include <render_context.h>
 
 namespace lumen {
-struct parameter_list {
-        std::vector<const char*> tokens;
-        std::vector<void*> values;
-};
-
-template<typename T>
-static parameter_list build_parameter_list(T& last_param, ...);
-
 #define BUILD_PARAMETER_LIST(p) \
-        parameter_list params = build_parameter_list(p)
+        std::vector<const char*> tokens; \
+        std::vector<void*> values; \
+        va_list list; \
+        va_start(list, p); \
+        const char* token = va_arg(list, const char*); \
+        void* value = va_arg(list, void*); \
+        while (token != nullptr) { \
+                tokens.push_back(token); \
+                values.push_back(value); \
+                token = va_arg(list, const char*); \
+                value = va_arg(list, void*); \
+        } \
+        va_end(list)
 
 #define SET_PARAMETER_LIST \
-        params.tokens.size(), \
-        (params.tokens.size() > 0) ? params.tokens.data() : nullptr, \
-        (params.values.size() > 0) ? params.values.data() : nullptr
+        tokens.size(), \
+        (tokens.size() > 0) ? tokens.data() : nullptr, \
+        (values.size() > 0) ? values.data() : nullptr
 
 const char* PLANE     = "plane";
 const char* RECTANGLE = "rectangle";
@@ -144,29 +148,5 @@ void Rotate(float degrees, float x, float y, float z)
 void Scale(float x, float y, float z)
 {
         context.Scale(x, y, z);
-}
-
-template<typename T>
-static parameter_list build_parameter_list(T& last_param, ...)
-{
-        parameter_list params;
-
-        va_list list;
-        va_start(list, last_param);
-
-        const char* token = va_arg(list, const char*);
-        void* value = va_arg(list, void*);
-
-        while (token != nullptr) {
-                params.tokens.push_back(token);
-                params.values.push_back(value);
-
-                token = va_arg(list, const char*);
-                value = va_arg(list, void*);
-        }
-
-        va_end(list);
-
-        return params;
 }
 }
