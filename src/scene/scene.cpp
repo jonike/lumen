@@ -33,6 +33,9 @@ namespace lumen {
 const char* PLANE     = "plane";
 const char* RECTANGLE = "rectangle";
 const char* SPHERE    = "sphere";
+const char* MESH      = "mesh";
+
+const char* MESHNAME = "meshname";
 
 const char* POINT       = "point";
 const char* DIRECTIONAL = "directional";

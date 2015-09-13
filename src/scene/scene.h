@@ -6,6 +6,10 @@ namespace lumen {
 extern const char* PLANE;
 extern const char* RECTANGLE;
 extern const char* SPHERE;
+extern const char* MESH;
+
+// geometry parameters
+extern const char* MESHNAME;
 
 // light types
 extern const char* DIRECTIONAL;

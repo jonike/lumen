@@ -150,6 +150,9 @@
     <ClCompile Include="..\..\src\geometry\triangle.cpp">
       <Filter>src\geometry</Filter>
     </ClCompile>
+    <ClCompile Include="..\..\src\geometry\mesh.cpp">
+      <Filter>src\geometry</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="..\..\src\image\image.h">
@@ -264,6 +267,9 @@
       <Filter>src\acceleration</Filter>
     </ClInclude>
     <ClInclude Include="..\..\src\geometry\triangle.h">
+      <Filter>src\geometry</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\src\geometry\mesh.h">
       <Filter>src\geometry</Filter>
     </ClInclude>
   </ItemGroup>
