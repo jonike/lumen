@@ -25,7 +25,7 @@ nex::color fresnel_refraction_btdf::sample(const lumen::sample& sample, const su
         }
 
         return (1.0f - fresnel(ni, nt, nex::dot(surface.normal, wo))) *
-               transmittance * (eta * eta) / std::abs(nex::dot(surface.normal, *wi));
+               transmittance / (eta * eta) / std::abs(nex::dot(surface.normal, *wi));
 }
 
 nex::color fresnel_refraction_btdf::evaluate(const surface& surface,
