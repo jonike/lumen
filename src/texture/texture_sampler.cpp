@@ -17,8 +17,8 @@ texture_sampler::~texture_sampler()
 
 nex::color texture_sampler::sample(float u, float v) const
 {
-        int x = static_cast<int>(u * texture_->width() + 0.5f);
-        int y = static_cast<int>(v * texture_->height() + 0.5f);
+        int x = static_cast<int>(u * texture_->width());
+        int y = static_cast<int>(v * texture_->height());
 
         return sample_2d(x, y, u, v);
 }
@@ -28,8 +28,8 @@ nex::color texture_sampler::sample(float u, float v, float w) const
         int face;
         get_texcoords_cube(&face, &u, &v, &w);
 
-        int x = static_cast<int>(u * texture_->width() + 0.5f);
-        int y = static_cast<int>(v * texture_->height() + 0.5f);
+        int x = static_cast<int>(u * texture_->width());
+        int y = static_cast<int>(v * texture_->height());
 
         return sample_cube(face, x, y, u, v);
 }
