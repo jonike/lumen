@@ -39,6 +39,7 @@ const char* MESHNAME = "meshname";
 
 const char* POINT       = "point";
 const char* DIRECTIONAL = "directional";
+const char* ENVIRONMENT = "environment";
 
 const char* COLOR     = "color";
 const char* DIRECTION = "direction";

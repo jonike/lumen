@@ -40,6 +40,7 @@
     <ClCompile Include="..\..\src\image\image.cpp" />
     <ClCompile Include="..\..\src\light\area_light.cpp" />
     <ClCompile Include="..\..\src\light\directional_light.cpp" />
+    <ClCompile Include="..\..\src\light\environment_light.cpp" />
     <ClCompile Include="..\..\src\light\light.cpp" />
     <ClCompile Include="..\..\src\light\point_light.cpp" />
     <ClCompile Include="..\..\src\main.cpp" />
@@ -82,6 +83,7 @@
     <ClInclude Include="..\..\src\image\image.h" />
     <ClInclude Include="..\..\src\light\area_light.h" />
     <ClInclude Include="..\..\src\light\directional_light.h" />
+    <ClInclude Include="..\..\src\light\environment_light.h" />
     <ClInclude Include="..\..\src\light\light.h" />
     <ClInclude Include="..\..\src\light\point_light.h" />
     <ClInclude Include="..\..\src\renderer\path_tracer.h" />

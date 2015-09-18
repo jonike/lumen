@@ -14,6 +14,7 @@ extern const char* MESHNAME;
 // light types
 extern const char* DIRECTIONAL;
 extern const char* POINT;
+extern const char* ENVIRONMENT;
 
 // light parameters
 extern const char* COLOR;

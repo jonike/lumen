@@ -27,7 +27,17 @@ nex::color path_tracer::radiance(const sampler* sampler, nex::ray* ray) const
 nex::color path_tracer::radiance(const sampler* sampler, nex::ray* ray, bool emittance) const
 {
         surface surface;
-        if ((ray->depth >= max_depth) || !acceleration->intersect(ray, &surface)) {
+        if (!acceleration->intersect(ray, &surface)) {
+                nex::color color;
+
+                for (const auto& light : lights) {
+                        color += light->emission(ray->direction);
+                }
+
+                return color;
+        }
+
+        if (ray->depth >= max_depth) {
                 return nex::color::black();
         }
 

@@ -153,6 +153,9 @@
     <ClCompile Include="..\..\src\geometry\mesh.cpp">
       <Filter>src\geometry</Filter>
     </ClCompile>
+    <ClCompile Include="..\..\src\light\environment_light.cpp">
+      <Filter>src\light</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="..\..\src\image\image.h">
@@ -271,6 +274,9 @@
     </ClInclude>
     <ClInclude Include="..\..\src\geometry\mesh.h">
       <Filter>src\geometry</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\src\light\environment_light.h">
+      <Filter>src\light</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>
