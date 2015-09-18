@@ -68,6 +68,16 @@ nex::color texture_sampler::fetch_cube(int face, int x, int y) const
         return texture_->fetch_cube(face, x, y);
 }
 
+int texture_sampler::texture_width() const
+{
+        return texture_->width();
+}
+
+int texture_sampler::texture_height() const
+{
+        return texture_->height();
+}
+
 void get_texcoords_cube(int* face, float* u, float* v, float* w)
 {
         float tu = 0.0f;

@@ -20,6 +20,9 @@ public:
 protected:
         nex::color fetch_2d(int x, int y) const;
         nex::color fetch_cube(int face, int x, int y) const;
+
+        int texture_width() const;
+        int texture_height() const;
 private:
         virtual nex::color sample_2d(int x, int y, float u, float v) const = 0;
         virtual nex::color sample_cube(int face, int x, int y, float u, float v) const = 0;

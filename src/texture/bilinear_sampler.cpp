@@ -1,9 +1,6 @@
 #include <bilinear_sampler.h>
 
 namespace lumen {
-static nex::color bilinear_interpolate(const nex::color& s0, const nex::color& s1,
-        const nex::color& s2, const nex::color& s3, float u, float v);
-
 bilinear_sampler::bilinear_sampler(const texture_ptr& tex, address_mode u, address_mode v) :
         texture_sampler(tex, u, v)
 {
@@ -29,13 +26,13 @@ nex::color bilinear_sampler::sample_cube(int face, int x, int y, float u, float 
         return bilinear_interpolate(s0, s1, s2, s3, u, v);
 }
 
-static nex::color bilinear_interpolate(const nex::color& s0, const nex::color& s1,
-        const nex::color& s2, const nex::color& s3, float u, float v)
+nex::color bilinear_sampler::bilinear_interpolate(const nex::color& s0, const nex::color& s1,
+        const nex::color& s2, const nex::color& s3, float u, float v) const
 {
         // calculate the interpolation amounts
         float null;
-        float tu = modf(u, &null);
-        float tv = modf(v, &null);
+        float tu = modf(u * texture_width(), &null);
+        float tv = modf(v * texture_height(), &null);
 
         // linearly interpolate along the top and bottom edges
         nex::color x0 = tu * s1 + (1 - tu) * s0;
