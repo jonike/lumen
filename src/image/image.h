@@ -4,6 +4,7 @@
 #include <color.h>
 #include <mutex>
 #include <SDL.h>
+#include <string>
 
 namespace lumen {
 extern const float GAMMA_VALUE;
@@ -15,7 +16,7 @@ public:
 
         bool is_open();
         void draw(int x, int y, int w, int h, const nex::color* pixels);
-        void save(const char* file);
+        void save(const std::string& file);
 private:
         SDL_Window* window;
         SDL_Surface* window_surface;

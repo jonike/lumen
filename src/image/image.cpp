@@ -115,9 +115,9 @@ void image::draw(int x, int y, int w, int h, const nex::color* pixels)
         }
 }
 
-void image::save(const char* file)
+void image::save(const std::string& file)
 {
-        if (SDL_SaveBMP(render_surface, file) != 0) {
+        if (SDL_SaveBMP(render_surface, file.c_str()) != 0) {
                 throw std::runtime_error(SDL_GetError());
         }
 }

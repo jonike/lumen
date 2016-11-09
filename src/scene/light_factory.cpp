@@ -10,80 +10,69 @@
 #include <texture_sampler.h>
 
 namespace lumen {
-static light_ptr create_point_light(int num, const char* tokens[], void* params[]);
-static light_ptr create_directional_light(int num, const char* tokens[], void* params[]);
-static light_ptr create_environment_light(int num, const char* tokens[], void* params[]);
+static light_ptr create_point_light(const parameter_list& params);
+static light_ptr create_directional_light(const parameter_list& params);
+static light_ptr create_environment_light(const parameter_list& params);
 
-light_ptr create_light(const char* name, int num, const char* tokens[], void* params[])
+light_ptr create_light(const std::string& name, const parameter_list& params)
 {
-        if (strcmp(POINT, name) == 0) {
-                return create_point_light(num, tokens, params);
-        } else if (strcmp(DIRECTIONAL, name) == 0) {
-                return create_directional_light(num, tokens, params);
-        } else if (strcmp(ENVIRONMENT, name) == 0) {
-                return create_environment_light(num, tokens, params);
+        if (name == POINT) {
+                return create_point_light(params);
+        } else if (name == DIRECTIONAL) {
+                return create_directional_light(params);
+        } else if (name == ENVIRONMENT) {
+                return create_environment_light(params);
         } else {
-                throw std::invalid_argument("invalid light " + std::string(name));
+                throw std::invalid_argument("invalid light: " + name);
         }
 }
 
-static light_ptr create_point_light(int num, const char* tokens[], void* params[])
+static light_ptr create_point_light(const parameter_list& params)
 {
-        float color[3] = {1.0f, 1.0f, 1.0f};
-        float pos[3] = {0.0f, 0.0f, 0.0f};
+        nex::color color = nex::color::white();
+        nex::point pos;
 
-        for (int i = 0; i < num; ++i) {
-                if (strcmp(COLOR, tokens[i]) == 0) {
-                        memcpy(color, reinterpret_cast<float*>(params[i]), sizeof(color));
-                } else if (strcmp(POSITION, tokens[i]) == 0) {
-                        memcpy(pos, reinterpret_cast<float*>(params[i]), sizeof(pos));
+        for (const parameter& p : params) {
+                if (p.name == COLOR) {
+                        color = p.color();
+                } else if (p.name == POSITION) {
+                        pos = p.point();
                 }
         }
 
-        nex::color lightcolor(color[0], color[1], color[2]);
-        nex::point position(pos[0], pos[1], pos[2]);
-
-        return light_ptr(new point_light(lightcolor, position));
+        return light_ptr(new point_light(color, pos));
 }
 
-static light_ptr create_directional_light(int num, const char* tokens[], void* params[])
+static light_ptr create_directional_light(const parameter_list& params)
 {
-        float color[3] = {1.0f, 1.0f, 1.0f};
-        float dir[3] = {0.0f, -1.0f, 0.0f};
+        nex::color color = nex::color::white();
+        nex::vector dir(0.0f, -1.0f, 0.0f);
 
-        for (int i = 0; i < num; ++i) {
-                if (strcmp(COLOR, tokens[i]) == 0) {
-                        memcpy(color, reinterpret_cast<float*>(params[i]), sizeof(color));
-                } else if (strcmp(DIRECTION, tokens[i]) == 0) {
-                        memcpy(dir, reinterpret_cast<float*>(params[i]), sizeof(dir));
+        for (const parameter& p : params) {
+                if (p.name == COLOR) {
+                        color = p.color();
+                } else if (p.name == DIRECTION) {
+                        dir = p.vector();
+                        nex::normalize(dir);
                 }
         }
 
-        nex::color lightcolor(color[0], color[1], color[2]);
-
-        nex::vector direction(dir[0], dir[1], dir[2]);
-        nex::normalize(direction);
-
-        return light_ptr(new directional_light(lightcolor, direction));
+        return light_ptr(new directional_light(color, dir));
 }
 
-static light_ptr create_environment_light(int num, const char* tokens[], void* params[])
+static light_ptr create_environment_light(const parameter_list& params)
 {
-        float color[3] = {1.0f, 1.0f, 1.0f};
+        nex::color color = nex::color::white();
         texture_sampler_ptr envmap;
 
-        for (int i = 0; i < num; ++i) {
-                if (strcmp(TEXTURENAME, tokens[i]) == 0) {
-                        envmap.reset(new bilinear_sampler(
-                                texture_cache::load(reinterpret_cast<char*>(params[i])),
-                                AM_CLAMP, AM_CLAMP));
-                } else if (strcmp(COLOR, tokens[i]) == 0) {
-                        memcpy(color, reinterpret_cast<float*>(params[i]), sizeof(color));
+        for (const parameter& p : params) {
+                if (p.name == TEXTURENAME) {
+                        envmap.reset(new bilinear_sampler(texture_cache::load(p.strval), AM_CLAMP, AM_CLAMP));
+                } else if (p.name == COLOR) {
+                        color = p.color();
                 }
         }
 
-        nex::color lightcolor(color[0], color[1], color[2]);
-
-        return light_ptr(new environment_light(lightcolor, envmap));
+        return light_ptr(new environment_light(color, envmap));
 }
 }

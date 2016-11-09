@@ -13,6 +13,7 @@
 #include <string>
 #include <vector.h>
 #include <vector>
+#include "parameter.h"
 
 namespace lumen {
 struct attributes {
@@ -43,7 +44,7 @@ public:
         void Begin();
         void End();
 
-        void Display(const char* name);
+        void Display(const std::string& name);
         void Resolution(int width, int height);
         void PixelSamples(int x, int y);
         void DepthOfField(float fstop, float focallength, float focaldistance);
@@ -51,15 +52,13 @@ public:
         void WorldBegin();
         void WorldEnd();
 
-        void Geometry(const char* name, int num, const char* tokens[], void* params[]);
+        void Geometry(const std::string& name, const parameter_list& params);
         void ObjectBegin();
         void ObjectEnd();
 
-        void Light(const char* name, int num, const char* tokens[], void* params[]);
-        void AreaLightBegin(float r, float g, float b);
-        void AreaLightEnd();
+        void Light(const std::string& name, const parameter_list& params);
 
-        void Material(const char* name, int num, const char* tokens[], void* params[]);
+        void Material(const std::string& name, const parameter_list& params);
 
         void Projection(float fov);
         void Translate(float x, float y, float z);

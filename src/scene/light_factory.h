@@ -2,9 +2,10 @@
 #define LUMEN_LIGHTFACTORY_H
 
 #include <light.h>
+#include "parameter.h"
 
 namespace lumen {
-light_ptr create_light(const char* name, int num, const char* tokens[], void* params[]);
+light_ptr create_light(const std::string& name, const parameter_list& params);
 }
 
 #endif

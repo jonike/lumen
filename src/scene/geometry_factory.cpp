@@ -8,33 +8,30 @@
 #include <stdexcept>
 
 namespace lumen {
-static geometry_ptr create_mesh(const attributes& attr, const char* name,
-        int num, const char* tokens[], void* params[]);
+static geometry_ptr create_mesh(const attributes& attr, const parameter_list& params);
 
-geometry_ptr create_geometry(const attributes& attr, const char* name,
-                                int num, const char* tokens[], void* params[])
+geometry_ptr create_geometry(const attributes& attr, const std::string& name, const parameter_list& params)
 {
-        if (strcmp(PLANE, name) == 0) {
+        if (name == PLANE) {
                 return geometry_ptr(new plane(attr.object_to_world, attr.material));
-        } else if (strcmp(RECTANGLE, name) == 0) {
+        } else if (name == RECTANGLE) {
                 return geometry_ptr(new rectangle(attr.object_to_world, attr.material));
-        } else if (strcmp(SPHERE, name) == 0) {
+        } else if (name == SPHERE) {
                 return geometry_ptr(new sphere(attr.object_to_world, attr.material));
-        } else if (strcmp(MESH, name) == 0) {
-                return create_mesh(attr, name, num, tokens, params);
+        } else if (name == MESH) {
+                return create_mesh(attr, params);
         } else {
-                throw std::invalid_argument("invalid geometry: " + std::string(name));
+                throw std::invalid_argument("invalid geometry: " + name);
         }
 }
 
-static geometry_ptr create_mesh(const attributes& attr, const char* name,
-        int num, const char* tokens[], void* params[])
+static geometry_ptr create_mesh(const attributes& attr, const parameter_list& params)
 {
         std::string filename;
 
-        for (int i = 0; i < num; ++i) {
-                if (strcmp(MESHNAME, tokens[i]) == 0) {
-                        filename = static_cast<const char*>(params[i]);
+        for (const parameter& p : params) {
+                if (p.name == MESHNAME) {
+                        filename = p.strval;
                 }
         }
 

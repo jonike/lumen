@@ -13,111 +13,106 @@
 #include <texture_cache.h>
 
 namespace lumen {
-static bsdf_ptr create_matte(const attributes& attr, int num, const char* tokens[], void* params[]);
-static bsdf_ptr create_chrome(const attributes& attr, int num, const char* tokens[], void* params[]);
-static bsdf_ptr create_plastic(const attributes& attr, int num, const char* tokens[], void* params[]);
-static bsdf_ptr create_glass(const attributes& attr, int num, const char* tokens[], void* params[]);
+static bsdf_ptr create_matte(const attributes& attr, const parameter_list& params);
+static bsdf_ptr create_chrome(const attributes& attr, const parameter_list& params);
+static bsdf_ptr create_plastic(const attributes& attr, const parameter_list& params);
+static bsdf_ptr create_glass(const attributes& attr, const parameter_list& params);
 
-bsdf_ptr create_material(const attributes& attr, const char* name,
-                        int num, const char* tokens[], void* params[])
+bsdf_ptr create_material(const attributes& attr, const std::string& name, const parameter_list& params)
 {
-        if (strcmp(MATTE, name) == 0) {
-                return create_matte(attr, num, tokens, params);
-        } else if (strcmp(CHROME, name) == 0) {
-                return create_chrome(attr, num, tokens, params);
-        } else if (strcmp(PLASTIC, name) == 0) {
-                return create_plastic(attr, num, tokens, params);
-        } else if (strcmp(GLASS, name) == 0) {
-                return create_glass(attr, num, tokens, params);
+        if (name == MATTE) {
+                return create_matte(attr, params);
+        } else if (name == CHROME) {
+                return create_chrome(attr, params);
+        } else if (name == PLASTIC) {
+                return create_plastic(attr, params);
+        } else if (name == GLASS) {
+                return create_glass(attr, params);
         } else {
-                throw std::invalid_argument("invalid material " + std::string(name));
+                throw std::invalid_argument("invalid material: " + name);
         }
 }
 
-static bsdf_ptr create_matte(const attributes& attr, int num, const char* tokens[], void* params[])
+static bsdf_ptr create_matte(const attributes& attr, const parameter_list& params)
 {
-        float color[3] = {1.0f, 1.0f, 1.0f};
+        nex::color diffuse = nex::color::white();
         texture_sampler_ptr sampler;
 
-        for (int i = 0; i < num; ++i) {
-                if (strcmp(TEXTURENAME, tokens[i]) == 0) {
-                        sampler.reset(new point_sampler(
-                                texture_cache::load(reinterpret_cast<char*>(params[i])),
-                                AM_WRAP, AM_WRAP));
-                } else if (strcmp(DIFFUSECOLOR, tokens[i]) == 0) {
-                        memcpy(color, reinterpret_cast<float*>(params[i]), sizeof(color));
+        for (const parameter& p : params) {
+                if (p.name == TEXTURENAME) {
+                        sampler.reset(new point_sampler(texture_cache::load(p.strval), AM_WRAP, AM_WRAP));
+                } else if (p.name == DIFFUSECOLOR) {
+                        diffuse = p.color();
                 }
         }
 
         bsdf* matte = new bsdf();
-        matte->add_bxdf(bxdf_ptr(new diffuse_brdf(nex::color(color[0], color[1], color[2]), sampler)));
+        matte->add_bxdf(bxdf_ptr(new diffuse_brdf(diffuse, sampler)));
 
         return bsdf_ptr(matte);
 }
 
-static bsdf_ptr create_chrome(const attributes& attr, int num, const char* tokens[], void* params[])
+static bsdf_ptr create_chrome(const attributes& attr, const parameter_list& params)
 {
-        float color[3] = {1.0f, 1.0f, 1.0f};
+        nex::color specular = nex::color::white();
 
-        for (int i = 0; i < num; ++i) {
-                if (strcmp(SPECULARCOLOR, tokens[i]) == 0) {
-                        memcpy(color, reinterpret_cast<float*>(params[i]), sizeof(color));
+        for (const parameter& p : params) {
+                if (p.name == SPECULARCOLOR) {
+                        specular = p.color();
                 }
         }
 
         bsdf* chrome = new bsdf();
-        chrome->add_bxdf(bxdf_ptr(new specular_reflection_brdf(nex::color(color[0], color[1], color[2]))));
+        chrome->add_bxdf(bxdf_ptr(new specular_reflection_brdf(specular)));
 
         return bsdf_ptr(chrome);
 }
 
-static bsdf_ptr create_plastic(const attributes& attr, int num, const char* tokens[], void* params[])
+static bsdf_ptr create_plastic(const attributes& attr, const parameter_list& params)
 {
-        float diffuse[3] = {0.5f, 0.5f, 0.5f};
-        float specular[3] = {0.5f, 0.5f, 0.5f};
+        nex::color diffuse(0.5f, 0.5f, 0.5f);
+        nex::color specular(0.5f, 0.5f, 0.5f);
         float exponent = 32.0f;
         texture_sampler_ptr sampler;
 
-        for (int i = 0; i < num; ++i) {
-                if (strcmp(TEXTURENAME, tokens[i]) == 0) {
-                        sampler.reset(new point_sampler(
-                                texture_cache::load(reinterpret_cast<char*>(params[i])),
-                                AM_WRAP, AM_WRAP));
-                } else if (strcmp(DIFFUSECOLOR, tokens[i]) == 0) {
-                        memcpy(diffuse, reinterpret_cast<float*>(params[i]), sizeof(diffuse));
-                } else if (strcmp(SPECULARCOLOR, tokens[i]) == 0) {
-                        memcpy(specular, reinterpret_cast<float*>(params[i]), sizeof(specular));
-                } else if (strcmp(EXPONENT, tokens[i]) == 0) {
-                        exponent = *reinterpret_cast<float*>(params[i]);
+        for (const parameter& p : params) {
+                if (p.name == TEXTURENAME) {
+                        sampler.reset(new point_sampler(texture_cache::load(p.strval), AM_WRAP, AM_WRAP));
+                } else if (p.name == DIFFUSECOLOR) {
+                        diffuse = p.color();
+                } else if (p.name == SPECULARCOLOR) {
+                        specular = p.color();
+                } else if (p.name == EXPONENT) {
+                        exponent = p.floatval;
                 }
         }
 
         bsdf* plastic = new bsdf();
-        plastic->add_bxdf(bxdf_ptr(new diffuse_brdf(nex::color(diffuse[0], diffuse[1], diffuse[2]), sampler)));
-        plastic->add_bxdf(bxdf_ptr(new glossy_reflection_brdf(nex::color(specular[0], specular[1], specular[2]), exponent)));
+        plastic->add_bxdf(bxdf_ptr(new diffuse_brdf(diffuse, sampler)));
+        plastic->add_bxdf(bxdf_ptr(new glossy_reflection_brdf(specular, exponent)));
 
         return bsdf_ptr(plastic);
 }
 
-static bsdf_ptr create_glass(const attributes& attr, int num, const char* tokens[], void* params[])
+static bsdf_ptr create_glass(const attributes& attr, const parameter_list& params)
 {
-        float specular[3] = {1.0f, 1.0f, 1.0f};
+        nex::color specular = nex::color::white();
         float ni = 1.0f;
         float nt = 1.5f;
 
-        for (int i = 0; i < num; ++i) {
-                if (strcmp(SPECULARCOLOR, tokens[i]) == 0) {
-                        memcpy(specular, reinterpret_cast<float*>(params[i]), sizeof(specular));
-                } else if (strcmp(NI, tokens[i]) == 0) {
-                        ni = *reinterpret_cast<float*>(params[i]);
-                } else if (strcmp(NT, tokens[i]) == 0) {
-                        nt = *reinterpret_cast<float*>(params[i]);
+        for (const parameter& p : params) {
+                if (p.name == SPECULARCOLOR) {
+                        specular = p.color();
+                } else if (p.name == NI) {
+                        ni = p.floatval;
+                } else if (p.name == NT) {
+                        nt = p.floatval;
                 }
         }
 
         bsdf* glass = new bsdf();
-        glass->add_bxdf(bxdf_ptr(new fresnel_reflection_brdf(nex::color(specular[0], specular[1], specular[2]), ni, nt)));
-        glass->add_bxdf(bxdf_ptr(new fresnel_refraction_btdf(nex::color(specular[0], specular[1], specular[2]), ni, nt)));
+        glass->add_bxdf(bxdf_ptr(new fresnel_reflection_brdf(specular, ni, nt)));
+        glass->add_bxdf(bxdf_ptr(new fresnel_refraction_btdf(specular, ni, nt)));
 
         return bsdf_ptr(glass);
 }

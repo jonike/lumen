@@ -10,26 +10,6 @@
 #include <render_context.h>
 
 namespace lumen {
-#define BUILD_PARAMETER_LIST(p) \
-        std::vector<const char*> tokens; \
-        std::vector<void*> values; \
-        va_list list; \
-        va_start(list, p); \
-        const char* token = va_arg(list, const char*); \
-        void* value = va_arg(list, void*); \
-        while (token != nullptr) { \
-                tokens.push_back(token); \
-                values.push_back(value); \
-                token = va_arg(list, const char*); \
-                value = va_arg(list, void*); \
-        } \
-        va_end(list)
-
-#define SET_PARAMETER_LIST \
-        tokens.size(), \
-        (tokens.size() > 0) ? tokens.data() : nullptr, \
-        (values.size() > 0) ? values.data() : nullptr
-
 const char* PLANE     = "plane";
 const char* RECTANGLE = "rectangle";
 const char* SPHERE    = "sphere";
@@ -73,7 +53,7 @@ void End()
         context.End();
 }
 
-void Display(const char* name)
+void Display(const std::string& name)
 {
         context.Display(name);
 }
@@ -103,11 +83,9 @@ void WorldEnd()
         context.WorldEnd();
 }
 
-void Geometry(const char* name, ...)
+void Geometry(const std::string& name, const parameter_list& params)
 {
-        BUILD_PARAMETER_LIST(name);
-
-        context.Geometry(name, SET_PARAMETER_LIST);
+        context.Geometry(name, params);
 }
 
 void ObjectBegin()
@@ -120,18 +98,14 @@ void ObjectEnd()
         context.ObjectEnd();
 }
 
-void Light(const char* name, ...)
+void Light(const std::string& name, const parameter_list& params)
 {
-        BUILD_PARAMETER_LIST(name);
-
-        context.Light(name, SET_PARAMETER_LIST);
+        context.Light(name, params);
 }
 
-void Material(const char* name, ...)
+void Material(const std::string& name, const parameter_list& params)
 {
-        BUILD_PARAMETER_LIST(name);
-
-        context.Material(name, SET_PARAMETER_LIST);
+        context.Material(name, params);
 }
 
 void Projection(float fov)

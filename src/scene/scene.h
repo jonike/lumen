@@ -1,6 +1,8 @@
 #ifndef LUMEN_SCENE_H
 #define LUMEN_SCENE_H
 
+#include "parameter.h"
+
 namespace lumen {
 // geometry types
 extern const char* PLANE;
@@ -41,7 +43,7 @@ void Begin();
 void End();
 
 // display methods
-void Display(const char* name);
+void Display(const std::string& name);
 void Resolution(int width, int height);
 void PixelSamples(int x, int y);
 void DepthOfField(float fstop, float focallength, float focaldistance);
@@ -51,15 +53,15 @@ void WorldBegin();
 void WorldEnd();
 
 // geometry creation
-void Geometry(const char* name, ...);
+void Geometry(const std::string& name, const parameter_list& params);
 void ObjectBegin();
 void ObjectEnd();
 
 // light creation
-void Light(const char* name, ...);
+void Light(const std::string& name, const parameter_list& params);
 
 // material creation
-void Material(const char* name, ...);
+void Material(const std::string& name, const parameter_list& params);
 
 // transformation methods
 void Projection(float fov);

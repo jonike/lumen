@@ -34,11 +34,11 @@
     <Filter Include="src\scene">
       <UniqueIdentifier>{09f20abe-bb15-43e5-8047-a88c4a24388c}</UniqueIdentifier>
     </Filter>
+    <Filter Include="src\scene\scene_parser">
+      <UniqueIdentifier>{42d6cf9a-5bcf-4c84-9161-3816f251c1fb}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="..\..\src\main.cpp">
-      <Filter>src</Filter>
-    </ClCompile>
     <ClCompile Include="..\..\src\image\image.cpp">
       <Filter>src\image</Filter>
     </ClCompile>
@@ -155,6 +155,15 @@
     </ClCompile>
     <ClCompile Include="..\..\src\light\environment_light.cpp">
       <Filter>src\light</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\src\scene\scene_parser\scene_parser.tab.c">
+      <Filter>src\scene\scene_parser</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\src\scene\scene_parser\scene_parser.yy.c">
+      <Filter>src\scene\scene_parser</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\src\scene\scene_parser\parameter.cpp">
+      <Filter>src\scene\scene_parser</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -277,6 +286,15 @@
     </ClInclude>
     <ClInclude Include="..\..\src\light\environment_light.h">
       <Filter>src\light</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\src\scene\scene_parser\scene_parser.tab.h">
+      <Filter>src\scene\scene_parser</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\src\scene\scene_parser\token.h">
+      <Filter>src\scene\scene_parser</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\src\scene\scene_parser\parameter.h">
+      <Filter>src\scene\scene_parser</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

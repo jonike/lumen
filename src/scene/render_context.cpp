@@ -52,7 +52,7 @@ void render_context::End()
         texture_cache::shutdown();
 }
 
-void render_context::Display(const char* name)
+void render_context::Display(const std::string& name)
 {
         cur_options.display_name = name;
 }
@@ -128,12 +128,12 @@ void render_context::WorldEnd()
 
         pool.run();
 
-        image.save(cur_options.display_name.c_str());
+        image.save(cur_options.display_name);
 }
 
-void render_context::Geometry(const char* name, int num, const char* tokens[], void* params[])
+void render_context::Geometry(const std::string& name, const parameter_list& params)
 {
-        geometry.push_back(create_geometry(cur_attributes, name, num, tokens, params));
+        geometry.push_back(create_geometry(cur_attributes, name, params));
 }
 
 void render_context::ObjectBegin()
@@ -151,14 +151,14 @@ void render_context::ObjectEnd()
         attributes_stack.pop();
 }
 
-void render_context::Light(const char* name, int num, const char* tokens[], void* params[])
+void render_context::Light(const std::string& name, const parameter_list& params)
 {
-        lights.push_back(create_light(name, num, tokens, params));
+        lights.push_back(create_light(name, params));
 }
 
-void render_context::Material(const char* name, int num, const char* tokens[], void* params[])
+void render_context::Material(const std::string& name, const parameter_list& params)
 {
-        cur_attributes.material = create_material(cur_attributes, name, num, tokens, params);
+        cur_attributes.material = create_material(cur_attributes, name, params);
 }
 
 void render_context::Projection(float fov)
