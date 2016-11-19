@@ -44,7 +44,7 @@ void thin_lens::create_view_ray(float x, float y, nex::point* origin, nex::vecto
 void thin_lens::depth_of_field(const sample& s, nex::point* origin, nex::vector* direction) const
 {
         float ratio = focal_distance / direction->z;
-        nex::point focal_point(origin->x * ratio, direction->y * ratio, focal_distance);
+        nex::point focal_point(direction->x * ratio, direction->y * ratio, focal_distance);
 
         nex::point lens_sample = sample_disk(s);
 
