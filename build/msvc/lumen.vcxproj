@@ -207,8 +207,8 @@
     </Link>
     <PostBuildEvent />
     <PostBuildEvent>
-      <Command>
-      </Command>
+      <Command>copy ..\..\lib\DevIL-SDK-x86-1.7.8\lib\*.dll $(OutDir)
+copy ..\..\lib\SDL2-2.0.3\lib\x86\SDL2.dll $(OutDir)</Command>
     </PostBuildEvent>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
@@ -257,8 +257,8 @@
     </Link>
     <PostBuildEvent />
     <PostBuildEvent>
-      <Command>
-      </Command>
+      <Command>copy ..\..\lib\DevIL-SDK-x86-1.7.8\lib\*.dll $(OutDir)
+copy ..\..\lib\SDL2-2.0.3\lib\x86\SDL2.dll $(OutDir)</Command>
     </PostBuildEvent>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
