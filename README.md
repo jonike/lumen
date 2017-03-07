@@ -1,8 +1,9 @@
 # lumen
 global illumination renderer
 
-<img src="https://goo.gl/kau8EN" height="240"/>
-<img src="https://goo.gl/xcos6H" height="240"/>
+## screenshots
+<img src="http://i.imgur.com/v4EwLDh.png"/>
+<img src="http://i.imgur.com/mHWvwbP.png"/>
 
 ## setup
 1. Clone the repo: `git clone https://github.com/jlukacs/lumen.git`
