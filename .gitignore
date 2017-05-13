@@ -2,6 +2,7 @@ bin/
 
 *.txt
 
+*.db
 *.opendb
 *.opensdf
 *.psess
