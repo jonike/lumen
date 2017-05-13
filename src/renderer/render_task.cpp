@@ -5,6 +5,9 @@
 #include <sampler.h>
 
 namespace lumen {
+bool render_task::stop = false;
+bool render_task::save_image = true;
+
 render_task::render_task(const renderer* renderer, const camera* camera, sampler* sampler,
         image* image, int spp, int screenx, int screeny, int w, int h) :
         renderer_(renderer),
@@ -24,6 +27,11 @@ void render_task::run()
 {
         for (int y = 0; y < h; ++y) {
                 for (int x = 0; x < w; ++x) {
+                        if (stop) {
+                                save_image = false;
+                                return;
+                        }
+
                         shade_pixel(x, y);
                 }
         }

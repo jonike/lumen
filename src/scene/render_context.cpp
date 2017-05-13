@@ -128,7 +128,16 @@ void render_context::WorldEnd()
 
         pool.run();
 
-        image.save(cur_options.display_name);
+        while (image.is_open()) {
+        }
+
+        render_task::stop = true;
+
+        pool.wait();
+
+        if (render_task::save_image) {
+                image.save(cur_options.display_name);
+        }
 }
 
 void render_context::Geometry(const std::string& name, const parameter_list& params)

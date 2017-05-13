@@ -18,6 +18,10 @@ public:
 
         virtual void run();
 private:
+        friend class render_context;
+        static bool stop;
+        static bool save_image;
+
         void shade_pixel(int x, int y);
         nex::color shade_sample(const sample& sample, int x, int y);
 
