@@ -11,10 +11,7 @@ mesh::mesh(const nex::matrix& world, const bsdf_ptr& bsdf, const std::string& fi
         geometry(world, bsdf),
         acceleration_(nullptr)
 {
-        nex::mesh mesh;
-        if (mesh.load(filename) != nex::SUCCESS) {
-                throw std::invalid_argument("failed to load mesh: " + std::string(filename));
-        }
+        nex::mesh mesh(filename);
 
         unsigned int* indices = mesh.indices();
         nex::mesh::vertex* vertices = mesh.vertices();
