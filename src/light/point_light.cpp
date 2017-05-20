@@ -1,6 +1,6 @@
 #include <geometry.h>
 #include <point_light.h>
-#include <util.h>
+#include "nex\util.h"
 
 namespace lumen {
 point_light::point_light(const nex::color& intensity, const nex::point& position) :

@@ -2,10 +2,10 @@
 #define LUMEN_BSDF_H
 
 #include <bxdf.h>
-#include <color.h>
 #include <memory>
 #include <vector>
-#include <vector.h>
+#include "nex\color.h"
+#include "nex\vector.h"
 
 namespace lumen {
 struct sample;

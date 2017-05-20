@@ -4,7 +4,7 @@
 #include <mesh.h>
 #include <stdexcept>
 #include <triangle.h>
-#include <nex\src\resource\mesh.h>
+#include "nex\mesh.h"
 
 namespace lumen {
 mesh::mesh(const nex::matrix& world, const bsdf_ptr& bsdf, const std::string& filename) :

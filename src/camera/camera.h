@@ -2,7 +2,7 @@
 #define LUMEN_CAMERA_H
 
 #include <memory>
-#include <ray.h>
+#include "nex\ray.h"
 
 namespace lumen {
 struct sample;

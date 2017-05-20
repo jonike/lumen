@@ -1,6 +1,6 @@
 #include <algorithm>
 #include <area_light.h>
-#include <util.h>
+#include "nex\util.h"
 
 namespace lumen {
 area_light::area_light(const nex::color& radiance, const geometry_ptr& emitter) :

@@ -14,7 +14,7 @@
 #include <render_task.h>
 #include <texture_cache.h>
 #include <thin_lens.h>
-#include <thread_pool.h>
+#include "nex\thread_pool.h"
 
 namespace lumen {
 attributes::attributes() :

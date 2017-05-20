@@ -3,8 +3,8 @@
 #include <exception>
 #include <image.h>
 #include <iostream>
-#include <util.h>
 #include <vector>
+#include "nex\util.h"
 
 namespace lumen {
 static nex::color gamma_correct(const nex::color& color, float gamma);

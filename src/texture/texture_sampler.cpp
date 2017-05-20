@@ -1,5 +1,5 @@
 #include <texture_sampler.h>
-#include <util.h>
+#include "nex\util.h"
 
 namespace lumen {
 static void get_texcoords_cube(int* face, float* u, float* v, float* w);

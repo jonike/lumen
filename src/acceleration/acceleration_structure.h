@@ -4,8 +4,8 @@
 #include <bound.h>
 #include <geometry.h>
 #include <memory>
-#include <ray.h>
 #include <vector>
+#include "nex\ray.h"
 
 namespace lumen {
 class acceleration_structure {

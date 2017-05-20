@@ -2,7 +2,7 @@
 #include <cassert>
 #include <sampler.h>
 #include <triangle.h>
-#include <util.h>
+#include "nex\util.h"
 
 namespace lumen {
 triangle::triangle(const nex::matrix& world, const bsdf_ptr& bsdf,

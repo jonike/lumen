@@ -1,7 +1,7 @@
 #include <algorithm>
 #include <bsdf.h>
 #include <geometry.h>
-#include <util.h>
+#include "nex\util.h"
 
 namespace lumen {
 void bsdf::add_bxdf(const bxdf_ptr& bxdf)

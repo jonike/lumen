@@ -3,8 +3,8 @@
 
 #include <memory>
 #include <sampler.h>
-#include <task.h>
 #include <vector>
+#include "nex\task.h"
 
 namespace lumen {
 class camera;

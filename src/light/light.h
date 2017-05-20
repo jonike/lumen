@@ -1,10 +1,10 @@
 #ifndef LUMEN_LIGHT_H
 #define LUMEN_LIGHT_H
 
-#include <color.h>
 #include <memory>
-#include <ray.h>
-#include <vector.h>
+#include "nex\color.h"
+#include "nex\ray.h"
+#include "nex\vector.h"
 
 namespace lumen {
 struct sample;

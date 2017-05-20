@@ -6,7 +6,7 @@
 #include <light.h>
 #include <path_tracer.h>
 #include <sampler.h>
-#include <util.h>
+#include "nex\util.h"
 
 namespace lumen {
 path_tracer::path_tracer(const acceleration_structure_ptr& acceleration,

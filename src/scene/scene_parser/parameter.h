@@ -2,9 +2,9 @@
 
 #include <string>
 #include <vector>
-#include <color.h>
-#include <point.h>
-#include <vector.h>
+#include "nex\color.h"
+#include "nex\point.h"
+#include "nex\vector.h"
 
 namespace lumen {
 class parameter {

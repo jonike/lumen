@@ -2,8 +2,8 @@
 #define LUMEN_THINLENS_H
 
 #include <camera.h>
-#include <matrix.h>
-#include <ray.h>
+#include "nex\matrix.h"
+#include "nex\ray.h"
 
 namespace lumen {
 class thin_lens : public camera {

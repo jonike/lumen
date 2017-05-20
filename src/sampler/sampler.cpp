@@ -1,6 +1,6 @@
 #include <cassert>
 #include <sampler.h>
-#include <util.h>
+#include "nex\util.h"
 
 namespace lumen {
 static const nex::vector y_axis(0.0001f, 1.0f, 0.0001f);

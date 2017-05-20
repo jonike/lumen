@@ -1,7 +1,7 @@
 #include <environment_light.h>
 #include <geometry.h>
 #include <sampler.h>
-#include <util.h>
+#include "nex\util.h"
 
 namespace lumen {
 environment_light::environment_light(const nex::color& radiance, const texture_sampler_ptr& envmap) :

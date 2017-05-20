@@ -1,10 +1,10 @@
 #ifndef LUMEN_TEXTURE_H
 #define LUMEN_TEXTURE_H
 
-#include <color.h>
 #include <memory>
 #include <string>
 #include <vector>
+#include "nex\color.h"
 
 namespace lumen {
 class texture {

@@ -1,9 +1,9 @@
 #ifndef LUMEN_BOUND_H
 #define LUMEN_BOUND_H
 
-#include <matrix.h>
-#include <point.h>
-#include <ray.h>
+#include "nex\matrix.h"
+#include "nex\point.h"
+#include "nex\ray.h"
 
 namespace lumen {
 class bound {

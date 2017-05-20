@@ -2,9 +2,9 @@
 #define LUMEN_SAMPLER_H
 
 #include <memory>
-#include <point.h>
-#include <vector.h>
 #include <vector>
+#include "nex\point.h"
+#include "nex\vector.h"
 
 namespace lumen {
 struct sample {

@@ -3,8 +3,8 @@
 
 #include <bound.h>
 #include <bsdf.h>
-#include <matrix.h>
-#include <ray.h>
+#include "nex\matrix.h"
+#include "nex\ray.h"
 
 namespace lumen {
 struct sample;

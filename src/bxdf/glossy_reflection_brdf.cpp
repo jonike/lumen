@@ -2,7 +2,7 @@
 #include <geometry.h>
 #include <glossy_reflection_brdf.h>
 #include <sampler.h>
-#include <util.h>
+#include "nex\util.h"
 
 namespace lumen {
 glossy_reflection_brdf::glossy_reflection_brdf(const nex::color& reflectance, float exponent) :

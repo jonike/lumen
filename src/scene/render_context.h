@@ -3,16 +3,16 @@
 
 #include <bsdf.h>
 #include <camera.h>
-#include <color.h>
 #include <geometry.h>
 #include <light.h>
-#include <matrix.h>
 #include <memory>
 #include <sampler.h>
 #include <stack>
 #include <string>
-#include <vector.h>
 #include <vector>
+#include "nex\color.h"
+#include "nex\matrix.h"
+#include "nex\vector.h"
 #include "parameter.h"
 
 namespace lumen {

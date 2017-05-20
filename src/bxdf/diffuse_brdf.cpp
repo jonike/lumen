@@ -1,7 +1,7 @@
 #include <diffuse_brdf.h>
 #include <geometry.h>
 #include <sampler.h>
-#include <util.h>
+#include "nex\util.h"
 
 namespace lumen {
 diffuse_brdf::diffuse_brdf(const nex::color& reflectance, const texture_sampler_ptr& diffuse_map) :

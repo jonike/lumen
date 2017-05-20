@@ -1,8 +1,8 @@
 #ifndef LUMEN_TEXTURESAMPLER_H
 #define LUMEN_TEXTURESAMPLER_H
 
-#include <color.h>
 #include <texture.h>
+#include "nex\color.h"
 
 namespace lumen {
 enum address_mode {

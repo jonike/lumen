@@ -2,10 +2,10 @@
 #define LUMEN_RENDERER_H
 
 #include <acceleration_structure.h>
-#include <color.h>
 #include <light.h>
-#include <ray.h>
 #include <vector>
+#include "nex\color.h"
+#include "nex\ray.h"
 
 namespace lumen {
 class sampler;

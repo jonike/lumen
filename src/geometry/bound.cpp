@@ -1,6 +1,6 @@
 #include <algorithm>
 #include <bound.h>
-#include <ray.h>
+#include "nex\ray.h"
 
 namespace lumen {
 bound::bound() :

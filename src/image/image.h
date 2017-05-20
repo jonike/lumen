@@ -1,10 +1,10 @@
 #ifndef LUMEN_IMAGE_H
 #define LUMEN_IMAGE_H
 
-#include <color.h>
 #include <mutex>
-#include <SDL.h>
 #include <string>
+#include <SDL.h>
+#include "nex\color.h"
 
 namespace lumen {
 extern const float GAMMA_VALUE;

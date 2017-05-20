@@ -1,7 +1,7 @@
 #include <cassert>
 #include <cmath>
 #include <sphere.h>
-#include <util.h>
+#include "nex\util.h"
 
 namespace lumen {
 static const float RADIUS = 1.0f;
