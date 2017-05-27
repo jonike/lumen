@@ -17,11 +17,12 @@ bool geometry::intersect(nex::ray* ray, surface* surface) const
 
         float t;
         nex::vector normal;
-        if (intersect(object_ray, &t, &normal) && (t > nex::EPSILON) && (t <= ray->max)) {
+        nex::point texcoord;
+        if (intersect(object_ray, &t, &normal, &texcoord) && (t > nex::EPSILON) && (t <= ray->max)) {
                 surface->position = (*ray)(t);
                 surface->normal = normal * normal_mat;
                 nex::normalize(surface->normal);
-                surface->texcoord = nex::point(0.0f, 0.0f, 0.0f);
+                surface->texcoord = texcoord;
                 surface->bsdf = bsdf.get();
 
                 ray->max = t;
@@ -68,6 +69,7 @@ void geometry::set_bound(const nex::point& min, const nex::point& max)
 bool geometry::intersect_shadow(const nex::ray& ray, float* t) const
 {
         nex::vector norm;
-        return intersect(ray, t, &norm);
+        nex::point texcoord;
+        return intersect(ray, t, &norm, &texcoord);
 }
 }

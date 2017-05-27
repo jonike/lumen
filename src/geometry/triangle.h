@@ -6,7 +6,7 @@
 namespace lumen {
 struct vertex {
         nex::point position;
-        nex::vector texcoord;
+        nex::point texcoord;
         nex::vector normal;
         nex::vector tangent;
 };
@@ -18,7 +18,7 @@ public:
 
         virtual float pdf() const;
 private:
-        virtual bool intersect(const nex::ray& ray, float* t, nex::vector* norm) const;
+        virtual bool intersect(const nex::ray& ray, float* t, nex::vector* norm, nex::point* texcoord) const;
         virtual void get_surface_sample(const sample& sample, nex::point* pos, nex::vector* norm) const;
 
         vertex vertices[3];

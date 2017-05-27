@@ -19,7 +19,7 @@ float sphere::pdf() const
         return inv_area;
 }
 
-bool sphere::intersect(const nex::ray& ray, float* t, nex::vector* norm) const
+bool sphere::intersect(const nex::ray& ray, float* t, nex::vector* norm, nex::point* texcoord) const
 {
         nex::vector origin = nex::vector(ray.origin);
 

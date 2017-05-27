@@ -33,7 +33,7 @@ float triangle::pdf() const
         return area;
 }
 
-bool triangle::intersect(const nex::ray& ray, float* t, nex::vector* norm) const
+bool triangle::intersect(const nex::ray& ray, float* t, nex::vector* norm, nex::point* texcoord) const
 {
         // compute the determinant and check for division by zero
         nex::vector b = vertices[1].position - vertices[0].position;
@@ -71,6 +71,7 @@ bool triangle::intersect(const nex::ray& ray, float* t, nex::vector* norm) const
         *t = one_over_det * nex::dot(c, a_cross_b);
 
         *norm = vertices[0].normal * (1.0f - u - v) + vertices[1].normal * u + vertices[2].normal * v;
+        *texcoord = vertices[0].texcoord * (1.0f - u - v) + vertices[1].texcoord * u + vertices[2].texcoord * v;
 
         return true;
 }

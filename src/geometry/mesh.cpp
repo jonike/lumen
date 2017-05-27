@@ -44,14 +44,17 @@ mesh::mesh(const nex::matrix& world, const bsdf_ptr& bsdf, const std::string& fi
                 // add the triangle
                 vertex t0;
                 t0.position = v0.position;
+                t0.texcoord = v0.texcoord;
                 t0.normal = v0.normal;
 
                 vertex t1;
                 t1.position = v1.position;
+                t1.texcoord = v1.texcoord;
                 t1.normal = v1.normal;
 
                 vertex t2;
                 t2.position = v2.position;
+                t2.texcoord = v2.texcoord;
                 t2.normal = v2.normal;
 
                 triangles[i] = geometry_ptr(new triangle(world, bsdf, t0, t1, t2));
@@ -68,7 +71,7 @@ float mesh::pdf() const
         return 0.0f;
 }
 
-bool mesh::intersect(const nex::ray& ray, float* t, nex::vector* norm) const
+bool mesh::intersect(const nex::ray& ray, float* t, nex::vector* norm, nex::point* texcoord) const
 {
         nex::ray tmp_ray = ray;
         surface s;
@@ -78,6 +81,7 @@ bool mesh::intersect(const nex::ray& ray, float* t, nex::vector* norm) const
         if (intersect) {
                 *t = tmp_ray.max;
                 *norm = s.normal;
+                *texcoord = s.texcoord;
         }
 
         return intersect;

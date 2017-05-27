@@ -24,12 +24,15 @@ float rectangle::pdf() const
         return inv_area;
 }
 
-bool rectangle::intersect(const nex::ray& ray, float* t, nex::vector* norm) const
+bool rectangle::intersect(const nex::ray& ray, float* t, nex::vector* norm, nex::point* texcoord) const
 {
         *t = -ray.origin.y / ray.direction.y;
         *norm = normal;
 
         nex::point p = ray(*t);
+
+        texcoord->x = p.x + 0.5f;
+        texcoord->y = -p.z + 0.5f;
 
         return (std::abs(p.x) <= half_width) && (std::abs(p.z) <= half_height);
 }

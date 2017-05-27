@@ -19,7 +19,7 @@ float plane::pdf() const
         return 0.0f;
 }
 
-bool plane::intersect(const nex::ray& ray, float* t, nex::vector* norm) const
+bool plane::intersect(const nex::ray& ray, float* t, nex::vector* norm, nex::point* texcoord) const
 {
         *t = -ray.origin.y / ray.direction.y;
         *norm = normal;

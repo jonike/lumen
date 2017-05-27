@@ -31,7 +31,7 @@ public:
 protected:
         void set_bound(const nex::point& min, const nex::point& max);
 private:
-        virtual bool intersect(const nex::ray& ray, float* t, nex::vector* norm) const = 0;
+        virtual bool intersect(const nex::ray& ray, float* t, nex::vector* norm, nex::point* texcoord) const = 0;
         virtual bool intersect_shadow(const nex::ray& ray, float* t) const;
         virtual void get_surface_sample(const sample& sample, nex::point* pos, nex::vector* norm) const = 0;
 
