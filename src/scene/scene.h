@@ -5,7 +5,6 @@
 
 namespace lumen {
 // geometry types
-extern const char* PLANE;
 extern const char* RECTANGLE;
 extern const char* SPHERE;
 extern const char* MESH;

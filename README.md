@@ -39,8 +39,10 @@ WorldBegin
     ObjectEnd
 
     ObjectBegin
+        Scale 10 10 10
+
         Material "matte"
-        Geometry "plane"
+        Geometry "rectangle"
     ObjectEnd
 WorldEnd
 ```

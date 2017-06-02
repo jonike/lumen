@@ -34,7 +34,6 @@
     <ClCompile Include="..\..\src\geometry\bound.cpp" />
     <ClCompile Include="..\..\src\geometry\geometry.cpp" />
     <ClCompile Include="..\..\src\geometry\mesh.cpp" />
-    <ClCompile Include="..\..\src\geometry\plane.cpp" />
     <ClCompile Include="..\..\src\geometry\rectangle.cpp" />
     <ClCompile Include="..\..\src\geometry\sphere.cpp" />
     <ClCompile Include="..\..\src\geometry\triangle.cpp" />
@@ -85,7 +84,6 @@
     <ClInclude Include="..\..\src\geometry\bound.h" />
     <ClInclude Include="..\..\src\geometry\geometry.h" />
     <ClInclude Include="..\..\src\geometry\mesh.h" />
-    <ClInclude Include="..\..\src\geometry\plane.h" />
     <ClInclude Include="..\..\src\geometry\rectangle.h" />
     <ClInclude Include="..\..\src\geometry\sphere.h" />
     <ClInclude Include="..\..\src\geometry\triangle.h" />

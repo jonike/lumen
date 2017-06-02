@@ -10,7 +10,6 @@
 #include <render_context.h>
 
 namespace lumen {
-const char* PLANE     = "plane";
 const char* RECTANGLE = "rectangle";
 const char* SPHERE    = "sphere";
 const char* MESH      = "mesh";

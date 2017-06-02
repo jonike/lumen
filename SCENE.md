@@ -72,8 +72,10 @@ WorldBegin
     ObjectEnd
 
     ObjectBegin
+        Scale 10 10 10
+
         Material "matte"
-        Geometry "plane"
+        Geometry "rectangle"
     ObjectEnd
 WorldEnd
 ```
@@ -120,7 +122,7 @@ Create geometry.
 
 `Geometry TYPE PARAMETER_LIST`
 
-Geometry type can be: "plane", "rectangle", "sphere", or "mesh".
+Geometry type can be: "rectangle", "sphere", or "mesh".
 
 #### mesh
 | Parameter | Description | Value | Default |

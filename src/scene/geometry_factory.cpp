@@ -1,6 +1,5 @@
 #include <geometry_factory.h>
 #include <mesh.h>
-#include <plane.h>
 #include <rectangle.h>
 #include <render_context.h>
 #include <scene.h>
@@ -12,9 +11,7 @@ static geometry_ptr create_mesh(const attributes& attr, const parameter_list& pa
 
 geometry_ptr create_geometry(const attributes& attr, const std::string& name, const parameter_list& params)
 {
-        if (name == PLANE) {
-                return geometry_ptr(new plane(attr.object_to_world, attr.material));
-        } else if (name == RECTANGLE) {
+        if (name == RECTANGLE) {
                 return geometry_ptr(new rectangle(attr.object_to_world, attr.material));
         } else if (name == SPHERE) {
                 return geometry_ptr(new sphere(attr.object_to_world, attr.material));

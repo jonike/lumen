@@ -60,9 +60,6 @@
     <ClCompile Include="..\..\src\geometry\geometry.cpp">
       <Filter>src\geometry</Filter>
     </ClCompile>
-    <ClCompile Include="..\..\src\geometry\plane.cpp">
-      <Filter>src\geometry</Filter>
-    </ClCompile>
     <ClCompile Include="..\..\src\geometry\rectangle.cpp">
       <Filter>src\geometry</Filter>
     </ClCompile>
@@ -195,9 +192,6 @@
       <Filter>src\bxdf</Filter>
     </ClInclude>
     <ClInclude Include="..\..\src\geometry\geometry.h">
-      <Filter>src\geometry</Filter>
-    </ClInclude>
-    <ClInclude Include="..\..\src\geometry\plane.h">
       <Filter>src\geometry</Filter>
     </ClInclude>
     <ClInclude Include="..\..\src\geometry\rectangle.h">
