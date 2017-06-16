@@ -1,7 +1,7 @@
 #include <cmath>
 #include <IL\il.h>
 #include <IL\ilu.h>
-#include <image.h>
+#include <film.h>
 #include <stdexcept>
 #include <texture.h>
 

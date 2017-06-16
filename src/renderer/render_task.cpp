@@ -1,5 +1,5 @@
 #include <camera.h>
-#include <image.h>
+#include <film.h>
 #include <render_task.h>
 #include <renderer.h>
 #include <sampler.h>
@@ -9,11 +9,11 @@ bool render_task::stop = false;
 bool render_task::save_image = true;
 
 render_task::render_task(const renderer* renderer, const camera* camera, sampler* sampler,
-        image* image, int spp, int screenx, int screeny, int w, int h) :
+        film* film, int spp, int screenx, int screeny, int w, int h) :
         renderer_(renderer),
         camera_(camera),
         sampler_(sampler->clone()),
-        image_(image),
+        film_(film),
         antialiasing_samples(spp),
         screenx(screenx),
         screeny(screeny),
@@ -36,7 +36,7 @@ void render_task::run()
                 }
         }
 
-        image_->draw(screenx, screeny, w, h, pixels.data());
+        film_->draw(screenx, screeny, w, h, pixels.data());
 }
 
 void render_task::shade_pixel(int x, int y)

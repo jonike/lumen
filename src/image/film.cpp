@@ -1,10 +1,7 @@
 #include <algorithm>
-#include <cassert>
-#include <exception>
-#include <image.h>
-#include <iostream>
 #include <vector>
 #include "nex\util.h"
+#include "film.h"
 
 namespace lumen {
 static nex::color gamma_correct(const nex::color& color, float gamma);
@@ -12,9 +9,7 @@ static int quantize(const nex::color& color);
 
 const float GAMMA_VALUE = 2.2f;
 
-image::image(int w, int h) :
-        window(nullptr),
-        window_surface(nullptr),
+film::film(int w, int h) :
         render_surface(nullptr),
         pixel_mutex()
 {
@@ -23,58 +18,35 @@ image::image(int w, int h) :
                         throw std::runtime_error(SDL_GetError());
                 }
 
-                window = SDL_CreateWindow("lumen",
-                                SDL_WINDOWPOS_CENTERED, SDL_WINDOWPOS_CENTERED,
-                                w, h,
-                                SDL_WINDOW_SHOWN);
-
-                if (!window) {
-                        throw std::runtime_error(SDL_GetError());
-                }
-
-                window_surface = SDL_GetWindowSurface(window);
-
-                if (!window_surface) {
-                        throw std::runtime_error(SDL_GetError());
-                }
-
-                if (SDL_UpdateWindowSurface(window) != 0) {
-                        throw std::runtime_error(SDL_GetError());
-                }
-
-                render_surface = SDL_CreateRGBSurface(0, w, h, 32,
-                                        0x000000ff, 0x0000ff00, 0x00ff0000, 0xff000000);
+                int flags = 0;
+                int depth = 32;
+                Uint32 rmask = 0x000000ff;
+                Uint32 gmask = 0x0000ff00;
+                Uint32 bmask = 0x00ff0000;
+                Uint32 amask = 0xff000000;
+                render_surface = SDL_CreateRGBSurface(flags, w, h, depth, rmask, gmask, bmask, amask);
 
                 if (!render_surface) {
                         throw std::runtime_error(SDL_GetError());
                 }
         } catch (const std::exception& e) {
-                SDL_DestroyWindow(window);
                 SDL_Quit();
                 throw e;
         }
 }
 
-image::~image()
+film::~film()
 {
         SDL_FreeSurface(render_surface);
-        SDL_DestroyWindow(window);
         SDL_Quit();
 }
 
-bool image::is_open()
+bool film::is_open()
 {
-        SDL_Event event;
-        while (SDL_PollEvent(&event)) {
-                if (event.type == SDL_QUIT) {
-                        return false;
-                }
-        }
-
         return true;
 }
 
-void image::draw(int x, int y, int w, int h, const nex::color* pixels)
+void film::draw(int x, int y, int w, int h, const nex::color* pixels)
 {
         if ((x > render_surface->w) || (y > render_surface->h)) {
                 return;
@@ -102,20 +74,9 @@ void image::draw(int x, int y, int w, int h, const nex::color* pixels)
         }
 
         SDL_UnlockSurface(render_surface);
-
-        SDL_Rect src_rect = {x, y, w, h};
-        SDL_Rect dst_rect = {x, y, w, h};
-
-        if (SDL_BlitSurface(render_surface, &src_rect, window_surface, &dst_rect) != 0) {
-                throw std::runtime_error(SDL_GetError());
-        }
-
-        if (SDL_UpdateWindowSurface(window) != 0) {
-                throw std::runtime_error(SDL_GetError());
-        }
 }
 
-void image::save(const std::string& file)
+void film::save(const std::string& file)
 {
         if (SDL_SaveBMP(render_surface, file.c_str()) != 0) {
                 throw std::runtime_error(SDL_GetError());
@@ -127,9 +88,9 @@ static nex::color gamma_correct(const nex::color& color, float gamma)
         float power = 1.0f / gamma;
 
         return nex::color(std::pow(std::max(color.r, 0.0f), power),
-                        std::pow(std::max(color.g, 0.0f), power),
-                        std::pow(std::max(color.b, 0.0f), power),
-                        1.0f);
+                          std::pow(std::max(color.g, 0.0f), power),
+                          std::pow(std::max(color.b, 0.0f), power),
+                          1.0f);
 }
 
 static int quantize(const nex::color& color)

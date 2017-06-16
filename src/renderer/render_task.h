@@ -8,17 +8,17 @@
 
 namespace lumen {
 class camera;
-class image;
+class film;
 class renderer;
 
 class render_task : public nex::task {
 public:
-        render_task(const renderer*, const camera*, sampler*, image*,
+        render_task(const renderer*, const camera*, sampler*, film*,
                 int spp, int screenx, int screeny, int w, int h);
 
         virtual void run();
 private:
-        friend class render_context;
+        friend class camera;
         static bool stop;
         static bool save_image;
 
@@ -28,7 +28,7 @@ private:
         const renderer* renderer_;
         const camera* camera_;
         std::unique_ptr<sampler> sampler_;
-        image* image_;
+        film* film_;
         sample_set antialiasing_samples;
         int screenx;
         int screeny;

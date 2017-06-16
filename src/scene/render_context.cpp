@@ -3,7 +3,6 @@
 #include <cmath>
 #include <diffuse_brdf.h>
 #include <geometry_factory.h>
-#include <image.h>
 #include <iostream>
 #include <jittered_sampler.h>
 #include <light_factory.h>
@@ -12,9 +11,9 @@
 #include <path_tracer.h>
 #include <render_context.h>
 #include <render_task.h>
+#include <render_window.h>
 #include <texture_cache.h>
 #include <thin_lens.h>
-#include "nex\thread_pool.h"
 
 namespace lumen {
 attributes::attributes() :
@@ -94,50 +93,9 @@ void render_context::WorldEnd()
         const lumen::sampler_ptr sampler(new jittered_sampler);
         const lumen::acceleration_structure_ptr acceleration(new null_acceleration(geometry));
         path_tracer renderer(acceleration, lights, sampler.get(), 4, 1);
-        image image(cur_options.horizontal_resolution, cur_options.vertical_resolution);
+        render_window window(cur_options.horizontal_resolution, cur_options.vertical_resolution);
 
-        int hres = cur_options.horizontal_resolution;
-        int vres = cur_options.vertical_resolution;
-
-        int block_dim = 32;
-
-        int grid_dimx = static_cast<int>(std::ceil(static_cast<float>(hres) / block_dim));
-        int grid_dimy = static_cast<int>(std::ceil(static_cast<float>(vres) / block_dim));
-
-        nex::thread_pool pool;
-        std::vector<std::shared_ptr<render_task>> tasks(grid_dimx * grid_dimy);
-
-        for (int j = 0; j < grid_dimy; ++j) {
-                for (int i = 0; i < grid_dimx; ++i) {
-                        int index = i + j * grid_dimx;
-
-                        int x = i * block_dim;
-                        int y = j * block_dim;
-
-                        tasks[index].reset(new render_task(
-                                        &renderer, camera.get(),
-                                        sampler.get(), &image,
-                                        cur_options.samplesx * cur_options.samplesy,
-                                        x, y,
-                                        std::min(block_dim, hres - x),
-                                        std::min(block_dim, vres - y)));
-
-                        pool.add_task(tasks[index].get());
-                }
-        }
-
-        pool.run();
-
-        while (image.is_open()) {
-        }
-
-        render_task::stop = true;
-
-        pool.wait();
-
-        if (render_task::save_image) {
-                image.save(cur_options.display_name);
-        }
+        camera->render(&renderer, sampler.get(), &window, cur_options);
 }
 
 void render_context::Geometry(const std::string& name, const parameter_list& params)

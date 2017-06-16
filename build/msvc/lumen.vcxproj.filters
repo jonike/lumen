@@ -4,9 +4,6 @@
     <Filter Include="src">
       <UniqueIdentifier>{27ce3927-53d3-4dc8-9db7-56b49689cd57}</UniqueIdentifier>
     </Filter>
-    <Filter Include="src\image">
-      <UniqueIdentifier>{5e044b96-e8a8-4097-80af-c97953db8f93}</UniqueIdentifier>
-    </Filter>
     <Filter Include="src\camera">
       <UniqueIdentifier>{d4cd3cf6-0578-43e6-92f5-17cf3b7f1a4a}</UniqueIdentifier>
     </Filter>
@@ -37,11 +34,11 @@
     <Filter Include="src\scene\scene_parser">
       <UniqueIdentifier>{42d6cf9a-5bcf-4c84-9161-3816f251c1fb}</UniqueIdentifier>
     </Filter>
+    <Filter Include="src\camera\film">
+      <UniqueIdentifier>{5e044b96-e8a8-4097-80af-c97953db8f93}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="..\..\src\image\image.cpp">
-      <Filter>src\image</Filter>
-    </ClCompile>
     <ClCompile Include="..\..\src\camera\thin_lens.cpp">
       <Filter>src\camera</Filter>
     </ClCompile>
@@ -111,9 +108,6 @@
     <ClCompile Include="..\..\src\renderer\renderer.cpp">
       <Filter>src\renderer</Filter>
     </ClCompile>
-    <ClCompile Include="..\..\src\renderer\render_task.cpp">
-      <Filter>src\renderer</Filter>
-    </ClCompile>
     <ClCompile Include="..\..\src\renderer\path_tracer.cpp">
       <Filter>src\renderer</Filter>
     </ClCompile>
@@ -165,11 +159,20 @@
     <ClCompile Include="..\..\src\scene\scene_parser\parameter.cpp">
       <Filter>src\scene\scene_parser</Filter>
     </ClCompile>
+    <ClCompile Include="..\..\src\image\render_window.cpp">
+      <Filter>src\camera\film</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\src\image\film.cpp">
+      <Filter>src\camera\film</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\src\camera\camera.cpp">
+      <Filter>src\camera</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\src\renderer\render_task.cpp">
+      <Filter>src\camera</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="..\..\src\image\image.h">
-      <Filter>src\image</Filter>
-    </ClInclude>
     <ClInclude Include="..\..\src\camera\camera.h">
       <Filter>src\camera</Filter>
     </ClInclude>
@@ -242,9 +245,6 @@
     <ClInclude Include="..\..\src\light\point_light.h">
       <Filter>src\light</Filter>
     </ClInclude>
-    <ClInclude Include="..\..\src\renderer\render_task.h">
-      <Filter>src\renderer</Filter>
-    </ClInclude>
     <ClInclude Include="..\..\src\renderer\path_tracer.h">
       <Filter>src\renderer</Filter>
     </ClInclude>
@@ -295,6 +295,15 @@
     </ClInclude>
     <ClInclude Include="..\..\src\scene\scene_parser\parameter.h">
       <Filter>src\scene\scene_parser</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\src\image\render_window.h">
+      <Filter>src\camera\film</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\src\image\film.h">
+      <Filter>src\camera\film</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\src\renderer\render_task.h">
+      <Filter>src\camera</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>
